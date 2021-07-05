@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Andrea.Hsu">
+  
+  
+  
+  
+  
+  <link rel="canonical" href="https://andreahsu.github.io/2021/nlp_01/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           NLP_01 | Andrea&#39;s Blog
+       
+  </title>
+  <meta name="title" content="NLP_01 | Andrea&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/andreahsu.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "NLP_01",
+    "headline" : "NLP_01",
+    "description" : "陳蘊農 word embeddings word2vec 5-1,5-2,5-3   word embedding(詞嵌入)   skip-gram model\nGoal: 根據目標字，去學習預測出該字周圍可能出現那些字 用一個nereul network去自己學習minimize target 的objectic function 也就是學習如何用一個vector表達一個字\n輸入假設為一萬維(字典裡)，那輸出也為一萬維，則希望透過該模型訓練出，是該字周圍的那些字 的維度數值要盡量大，最後再輸出放softmax變成機率分布\n其中300即為每個word vector的維度(該字的300個features)\nx是輸入該字的向量(大小:v)，W為隱藏層的權重矩陣(大小:vN，有v個字，每個字有N個feature(即為word embedding，代表該字的位置))，h=xW就是取出唯一相關該字的N個feature，\nh為大小為N的向量，在去乘上W\u0026rsquo;的每個column，得出當該字為target word時，對第j個column所代表的context word 有多少關聯\n最後用softmax得出機率分布\n  word2vec training\n  更新W\u0027 要做的事: minimize loss function:\n(submit c是 window size，c\u0026lt;v) e越大，e*h所佔的比例越重，影響越深，會調整的(對loss function)比較多 Q:ejc(error term)不就只有1,0兩種數值?\n  更新W 要做的事: minimize loss function:\n(submit v是該字的大小，c\u0026lt;v)\n是否是neighbor的EIj * W\u0026rsquo;ij的權重 * Xj(對Xj這個target word造成的影響)\n問題:運算量大，假設有10000字，然後真正是neightbor的字只有10個，那要update剩下的9990個字的weight Ans:限制可以更新weight的字的數量\n該文章講得很好 例如: Negative sampling 即用來解決這個問題，對於每個訓練樣本，只更新一部分的權重，而非整個神經網路的權重都被更新。舉例來說，當我們用訓練樣本 (input word: “fox”, output word: “quick”) 來訓練我們的神經網路時，”fox” 和 “quick” 都是用 one-hot 編碼來表示。如果我們詞彙表的大小是 10,000 的話，則在輸出層，我們期望對應 “quick” 這個字詞的神經元節點輸出是 1，其他 9.",
+    "inLanguage" : "en-us",
+    "author" : "Andrea.Hsu",
+    "creator" : "Andrea.Hsu",
+    "publisher": "Andrea.Hsu",
+    "accountablePerson" : "Andrea.Hsu",
+    "copyrightHolder" : "Andrea.Hsu",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-07-05 11:24:09 \u002b0800 CST",
+    "dateModified" : "2021-07-05 11:24:09 \u002b0800 CST",
+    "url" : "https:\/\/andreahsu.github.io\/2021\/nlp_01\/",
+    "wordCount" : "115",
+    "keywords" : [ "NLP", "Andrea\u0027s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://andreahsu.github.io">Andrea&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://andreahsu.github.io">Andrea&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">NLP_01</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://andreahsu.github.io" rel="author">Andrea.Hsu</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-07-05 itemprop="datePublished">July 5, 2021</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://andreahsu.github.io/categories/leanring/"> Leanring </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="陳蘊農-word-embeddings-word2vec-5-15-25-3">陳蘊農 word embeddings word2vec 5-1,5-2,5-3</h1>
+<ul>
+<li>
+<p>word embedding(詞嵌入)
+<img src="https://i.imgur.com/kfUC3mj.png" alt=""></p>
+</li>
+<li>
+<p>skip-gram model</p>
+<p>Goal: 根據目標字，去學習預測出該字周圍可能出現那些字
+用一個nereul network去自己學習minimize target 的objectic function
+也就是學習如何用一個vector表達一個字</p>
+<p><img src="https://i.imgur.com/k00kfU3.png" alt=""></p>
+<p>輸入假設為一萬維(字典裡)，那輸出也為一萬維，則希望透過該模型訓練出，是該字周圍的那些字 的維度數值要盡量大，最後再輸出放softmax變成機率分布</p>
+<p><img src="https://i.imgur.com/qQbAxn7.png" alt="">
+其中300即為每個word vector的維度(該字的300個features)</p>
+<p><img src="https://i.imgur.com/qRVrjVt.png" alt="">
+<img src="https://i.imgur.com/vG7CFCD.png" alt=""></p>
+<p>x是輸入該字的向量(大小:v)，W為隱藏層的權重矩陣(大小:v<em>N，有v個字，每個字有N個feature(即為word embedding，代表該字的位置))，h=x</em>W就是取出唯一相關該字的N個feature，</p>
+<p><img src="https://i.imgur.com/o1A1YMn.png" alt=""></p>
+<p>h為大小為N的向量，在去乘上W&rsquo;的每個column，得出當該字為target word時，對第j個column所代表的context word 有多少關聯</p>
+<p><img src="https://i.imgur.com/gtjEDn2.png" alt=""></p>
+<p><img src="https://i.imgur.com/jpwMUUm.png" alt=""></p>
+<p>最後用softmax得出機率分布</p>
+</li>
+<li>
+<p>word2vec training</p>
+<ul>
+<li>
+<p>更新W'
+要做的事: minimize loss function:</p>
+<p><img src="https://i.imgur.com/Si81oTG.png" alt="">
+(submit c是 window size，c&lt;v)
+e越大，e*h所佔的比例越重，影響越深，會調整的(對loss function)比較多
+Q:ejc(error term)不就只有1,0兩種數值?</p>
+</li>
+<li>
+<p>更新W
+要做的事: minimize loss function:</p>
+<p><img src="https://i.imgur.com/gOl88ET.png" alt="">
+(submit v是該字的大小，c&lt;v)</p>
+<p><img src="https://i.imgur.com/zzSCxj7.png" alt=""></p>
+<p>是否是neighbor的EIj * W&rsquo;ij的權重 * Xj(對Xj這個target word造成的影響)</p>
+<p>問題:運算量大，假設有10000字，然後真正是neightbor的字只有10個，那要update剩下的9990個字的weight
+Ans:限制可以更新weight的字的數量</p>
+<p>該<a href="https://tengyuanchang.medium.com/%E8%AE%93%E9%9B%BB%E8%85%A6%E8%81%BD%E6%87%82%E4%BA%BA%E8%A9%B1-%E7%90%86%E8%A7%A3-nlp-%E9%87%8D%E8%A6%81%E6%8A%80%E8%A1%93-word2vec-%E7%9A%84-skip-gram-%E6%A8%A1%E5%9E%8B-73d0239ad698https://">文章</a>講得很好
+例如:
+Negative sampling 即用來解決這個問題，對於每個訓練樣本，只更新一部分的權重，而非整個神經網路的權重都被更新。舉例來說，當我們用訓練樣本 (input word: “fox”, output word: “quick”) 來訓練我們的神經網路時，”fox” 和 “quick” 都是用 one-hot 編碼來表示。如果我們詞彙表的大小是 10,000 的話，則在輸出層，我們期望對應 “quick” 這個字詞的神經元節點輸出是 1，其他 9.999 個神經元輸出都是 0，這 9,999 個期望輸出為 0 的神經元節點所對應的字詞我們就稱為 “negative word”。</p>
+<p>當使用 negative sampling 時，我們隨機選擇一小部分的 “negative” words (比如說選 5 個 negative words) 來更新相對應的權重。我們也會針對 “positive” word 做更新，在目前的例子，positive word 是 “quick”。論文中是說如果是小規模數據集的話，可選 5–20 個字作為 negative sample；但對於比較大的數據集的話，可選擇 2–5 個字詞作為 negative words。</p>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Andrea.Hsu </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://andreahsu.github.io/2021/nlp_01/>https://andreahsu.github.io/2021/nlp_01/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://andreahsu.github.io/tags/nlp/">
+                    #NLP</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://andreahsu.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2021 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://andreahsu.github.io">Andrea.Hsu</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

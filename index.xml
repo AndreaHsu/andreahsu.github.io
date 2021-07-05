@@ -5,13 +5,13 @@
     <description>Recent content in Andrea&#39;s Blog on Andrea&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jul 2021 00:34:57 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jul 2021 11:24:09 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Posts</title>
       <link>https://andreahsu.github.io/posts/</link>
-      <pubDate>Mon, 05 Jul 2021 00:34:57 +0800</pubDate>
+      <pubDate>Mon, 05 Jul 2021 11:24:09 +0800</pubDate>
       
       <guid>https://andreahsu.github.io/posts/</guid>
       <description></description>
@@ -23,16 +23,11 @@
       <pubDate>Sat, 03 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://andreahsu.github.io/about/</guid>
-      <description>&lt;p&gt;Hugo is the &lt;strong&gt;world’s fastest framework for building websites&lt;/strong&gt;. It is written in Go.&lt;/p&gt;
-&lt;p&gt;It makes use of a variety of open source projects including:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/russross/blackfriday&#34;&gt;https://github.com/russross/blackfriday&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/alecthomas/chroma&#34;&gt;https://github.com/alecthomas/chroma&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/muesli/smartcrop&#34;&gt;https://github.com/muesli/smartcrop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/viper&#34;&gt;https://github.com/spf13/viper&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;Hello,everyone!
+I am &lt;strong&gt;Andrea Hsu&lt;/strong&gt;, a student pursuing &lt;strong&gt;computer science&lt;/strong&gt; in &lt;strong&gt;NTHU&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This blog is used to record my learning journey.&lt;/p&gt;
+&lt;p&gt;I also make some project recently,&lt;/p&gt;
+&lt;p&gt;Welcome to learn more on my &lt;a href=&#34;https://github.com/AndreaHsu&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

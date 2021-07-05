@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>feedback on Andrea&#39;s Blog</title>
+    <link>https://andreahsu.github.io/tags/feedback/</link>
+    <description>Recent content in feedback on Andrea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Jul 2021 10:29:27 +0800</lastBuildDate><atom:link href="https://andreahsu.github.io/tags/feedback/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>logic design</title>
+      <link>https://andreahsu.github.io/2021/01/</link>
+      <pubDate>Mon, 05 Jul 2021 10:29:27 +0800</pubDate>
+      
+      <guid>https://andreahsu.github.io/2021/01/</guid>
+      <description>logic design </description>
+    </item>
+    
+  </channel>
+</rss>
