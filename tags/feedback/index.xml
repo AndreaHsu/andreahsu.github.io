@@ -6,7 +6,27 @@
     <description>Recent content in feedback on Andrea&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jul 2021 10:29:27 +0800</lastBuildDate><atom:link href="https://andreahsu.github.io/tags/feedback/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Jul 2021 12:59:48 +0800</lastBuildDate><atom:link href="https://andreahsu.github.io/tags/feedback/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software</title>
+      <link>https://andreahsu.github.io/2021/software/</link>
+      <pubDate>Mon, 19 Jul 2021 12:59:48 +0800</pubDate>
+      
+      <guid>https://andreahsu.github.io/2021/software/</guid>
+      <description>軟體實驗設計(大二下必) 吳尚鴻 課程走向 上課是輔助，網路上有預先錄好的詳細教學影片，每周的影片時數很多，但十分詳細，每周都會釋出下一周的教學影片，老師實際上課時只提重點，細節要自己回去看影片。老師的投影片也做得非常詳細， 會介紹hmtl、css、javascript，會介紹業界常用的軟體跟debug工具
+project 期末要做出一個 可以解決生活一個問題 的專題，期中報告前會先由助教和各組討論，不行的題目就會被打槍，要重想(幾乎每組都會被打槍)，最容易被問的問題也讓學生學習到，未來在開發一個專案或產品時，到底應該先考慮哪些
+ 真的有這個需求嗎?  那現在市場上就已經有&amp;hellip;.那這個我可以用&amp;hellip;甚麼功能取代你要做的東西，一樣可以達到功效阿   現有技術調查  那你們想解決的問題到底是甚麼，你們的產品跟現在市面上的&amp;hellip;有甚麼不一樣   功能不要太發散  一方面是怕做不完，一方面我們能確保整合性的產品功效真的做的會比focus在單一問題點上的現有產品還要好嗎?    此外，老師非常看中 user 介面、RWD響應式設計
+考試   每周都有上機，是助教實際帶實作的部分，內容主要跟課程相搭，有時候是作業，前幾次期限通常是當天晚上12點，後面因為要完成的部分量比較多，所以期限通常是一星期之後;有時候是lab考試，規定在上機的兩小時要寫出來，但會視情況而定，有時候太難了就會改期限或改成作業(很彈性)
+  內容: 一開始會教導使用git，每周的作業跟上機模板也都是要從老師實驗室的gitlab clone下來，從基礎html，css，javascipt，並會教導引用一些boostrap的套件，後來會圍繞在建一個功能完整的天氣預報網站，引用api跟一些開放性資料，會搭配課程教導前端框架React，並使用後端DB postgres，還會deploy到AWS上，最後會提及一些機器學習
+  分數:
+  上機跟作業總佔比60%(除下來一次就是佔4%到5%)，期中提案報告與期末成果報告分數很重
+  期中與期末:
+會提前說需要報告哪些內容，評分由助教及老師給(給分很嚴)，只要有一項沒有報告到或不完整可能該項評分項目就會沒分數
+期末會審視期中提案到底完成哪些，所以期中不能太浮誇XD若期末完成度不足會扣分
+    心得 這是目前學到最多實作應用的課程，真的很棒，雖然loading很重，但每週課程好好跟，上機好好搞懂，不懂的語法或功能就多google，以前自學可能不知道有這麼多套件可以使用，也只會很基本的排版阿，透過每一次上機的作業及考試，也會更知道有哪些技術可以使用，尤其在最後final project的時候，自己實作時會去google及debug，更提升解決問題的能力
+ 翹課:可以，他不管，但損失的真的會是自己。  困境 方法 </description>
+    </item>
+    
     <item>
       <title>logic design</title>
       <link>https://andreahsu.github.io/2021/01/</link>

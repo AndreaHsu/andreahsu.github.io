@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Andrea&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Jul 2021 10:05:43 +0800</lastBuildDate><atom:link href="https://andreahsu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Jul 2021 12:59:48 +0800</lastBuildDate><atom:link href="https://andreahsu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build_dict</title>
+      <link>https://andreahsu.github.io/2021/build_dict/</link>
+      <pubDate>Mon, 19 Jul 2021 12:47:37 +0800</pubDate>
+      
+      <guid>https://andreahsu.github.io/2021/build_dict/</guid>
+      <description>NLP 建立字典/語料庫 流程 舉例: train_text = [&amp;quot;你喜歡吃蘋果&amp;quot;,&amp;quot;我愛喝可口可樂&amp;quot;,&amp;quot;他喜歡喝飲料&amp;quot;] test_text = [&amp;quot;我喜歡吃奇異果&amp;quot;]
+先根據train_text建立字典   1.先使用Tokenizer建立有num_words容量的字典 token = Tokenizer(num_words=num_words) Tokenizer用來對文字中的詞進行統計計數，生成文件詞典，以支援基於詞典位序生成文字的向量表示
+  2.使用一系列文件來生成token詞典，texts為list類，每個元素為一個文件 token.fit_on_texts(text)   3.輸出看一下建立的辭典   印出每個字出現的次數
+print (token.word_counts) 輸出: OrderedDict([(&amp;#39;喜歡&amp;#39;, 2), (&amp;#39;吃&amp;#39;, 1), (&amp;#39;蘋果&amp;#39;, 1), (&amp;#39;我愛喝&amp;#39;, 1), (&amp;#39;可口&amp;#39;, 1), (&amp;#39;可樂&amp;#39;, 1), (&amp;#39;喝&amp;#39;, 1), (&amp;#39;飲料&amp;#39;, 1)]   印出每個字的index
+print (token.word_index) 輸出: {&amp;#39;喜歡&amp;#39;: 1, &amp;#39;吃&amp;#39;: 2, &amp;#39;蘋果&amp;#39;: 3, &amp;#39;我愛喝&amp;#39;: 4, &amp;#39;可口&amp;#39;: 5, &amp;#39;可樂&amp;#39;: 6, &amp;#39;喝&amp;#39;: 7, &amp;#39;飲料&amp;#39;: 8}     4.</description>
+    </item>
+    
     <item>
       <title>NLP_01</title>
       <link>https://andreahsu.github.io/2021/nlp_01/</link>

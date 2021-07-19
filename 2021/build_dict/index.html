@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Andrea.Hsu">
+  
+  
+  
+  <link rel="prev" href="https://andreahsu.github.io/2021/nlp_01/" />
+  
+  <link rel="canonical" href="https://andreahsu.github.io/2021/build_dict/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Build_dict | Andrea&#39;s Blog
+       
+  </title>
+  <meta name="title" content="Build_dict | Andrea&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/andreahsu.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Build_dict",
+    "headline" : "Build_dict",
+    "description" : "NLP 建立字典\/語料庫 流程 舉例: train_text = [\u0026quot;你喜歡吃蘋果\u0026quot;,\u0026quot;我愛喝可口可樂\u0026quot;,\u0026quot;他喜歡喝飲料\u0026quot;] test_text = [\u0026quot;我喜歡吃奇異果\u0026quot;]\n先根據train_text建立字典   1.先使用Tokenizer建立有num_words容量的字典 token = Tokenizer(num_words=num_words) Tokenizer用來對文字中的詞進行統計計數，生成文件詞典，以支援基於詞典位序生成文字的向量表示\n  2.使用一系列文件來生成token詞典，texts為list類，每個元素為一個文件 token.fit_on_texts(text)   3.輸出看一下建立的辭典   印出每個字出現的次數\nprint (token.word_counts) 輸出: OrderedDict([(\u0026#39;喜歡\u0026#39;, 2), (\u0026#39;吃\u0026#39;, 1), (\u0026#39;蘋果\u0026#39;, 1), (\u0026#39;我愛喝\u0026#39;, 1), (\u0026#39;可口\u0026#39;, 1), (\u0026#39;可樂\u0026#39;, 1), (\u0026#39;喝\u0026#39;, 1), (\u0026#39;飲料\u0026#39;, 1)]   印出每個字的index\nprint (token.word_index) 輸出: {\u0026#39;喜歡\u0026#39;: 1, \u0026#39;吃\u0026#39;: 2, \u0026#39;蘋果\u0026#39;: 3, \u0026#39;我愛喝\u0026#39;: 4, \u0026#39;可口\u0026#39;: 5, \u0026#39;可樂\u0026#39;: 6, \u0026#39;喝\u0026#39;: 7, \u0026#39;飲料\u0026#39;: 8}     4.",
+    "inLanguage" : "en-us",
+    "author" : "Andrea.Hsu",
+    "creator" : "Andrea.Hsu",
+    "publisher": "Andrea.Hsu",
+    "accountablePerson" : "Andrea.Hsu",
+    "copyrightHolder" : "Andrea.Hsu",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-07-19 12:47:37 \u002b0800 CST",
+    "dateModified" : "2021-07-19 12:47:37 \u002b0800 CST",
+    "url" : "https:\/\/andreahsu.github.io\/2021\/build_dict\/",
+    "wordCount" : "102",
+    "keywords" : [ "NLP", "Andrea\u0027s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://andreahsu.github.io">Andrea&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://andreahsu.github.io">Andrea&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Build_dict</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://andreahsu.github.io" rel="author">Andrea.Hsu</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-07-19 itemprop="datePublished">July 19, 2021</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://andreahsu.github.io/categories/learning/"> Learning </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="nlp-建立字典語料庫-流程">NLP 建立字典/語料庫 流程</h1>
+<p>舉例:
+<code>train_text = [&quot;你喜歡吃蘋果&quot;,&quot;我愛喝可口可樂&quot;,&quot;他喜歡喝飲料&quot;]</code>
+<code>test_text = [&quot;我喜歡吃奇異果&quot;]</code></p>
+<h3 id="先根據train_text建立字典">先根據train_text建立字典</h3>
+<ul>
+<li>
+<h4 id="1先使用tokenizer建立有num_words容量的字典">1.先使用Tokenizer建立有num_words容量的字典</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Tokenizer</span>(<span style="color:#a6e22e">num_words</span><span style="color:#f92672">=</span><span style="color:#a6e22e">num_words</span>)
+</code></pre></div><p>Tokenizer用來對文字中的詞進行統計計數，生成文件詞典，以支援基於詞典位序生成文字的向量表示</p>
+</li>
+<li>
+<h4 id="2使用一系列文件來生成token詞典texts為list類每個元素為一個文件">2.使用一系列文件來生成token詞典，texts為list類，每個元素為一個文件</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">token</span>.<span style="color:#a6e22e">fit_on_texts</span>(<span style="color:#a6e22e">text</span>)
+</code></pre></div></li>
+<li>
+<h4 id="3輸出看一下建立的辭典">3.輸出看一下建立的辭典</h4>
+<ul>
+<li>
+<p>印出每個字出現的次數</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">print</span> (<span style="color:#a6e22e">token</span>.<span style="color:#a6e22e">word_counts</span>)
+
+<span style="color:#a6e22e">輸出</span><span style="color:#f92672">:</span> 
+<span style="color:#a6e22e">OrderedDict</span>([(<span style="color:#e6db74">&#39;喜歡&#39;</span>, <span style="color:#ae81ff">2</span>), (<span style="color:#e6db74">&#39;吃&#39;</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#e6db74">&#39;蘋果&#39;</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#e6db74">&#39;我愛喝&#39;</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#e6db74">&#39;可口&#39;</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#e6db74">&#39;可樂&#39;</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#e6db74">&#39;喝&#39;</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#e6db74">&#39;飲料&#39;</span>, <span style="color:#ae81ff">1</span>)]
+</code></pre></div></li>
+<li>
+<p>印出每個字的index</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">print</span> (<span style="color:#a6e22e">token</span>.<span style="color:#a6e22e">word_index</span>)
+
+<span style="color:#a6e22e">輸出</span><span style="color:#f92672">:</span> 
+{<span style="color:#e6db74">&#39;喜歡&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;吃&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;蘋果&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;我愛喝&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#39;可口&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;可樂&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">6</span>, <span style="color:#e6db74">&#39;喝&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">7</span>, <span style="color:#e6db74">&#39;飲料&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8</span>}
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<h4 id="4根據token去將train_text及test_text的已斷詞文字轉為數字向量">4.根據token去將train_text及test_text的已斷詞文字轉為數字向量</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">train_text_seq</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">token</span>.<span style="color:#a6e22e">texts_to_sequences</span>(<span style="color:#a6e22e">train_text</span>)
+<span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">train_text_seq</span>)
+
+<span style="color:#a6e22e">輸出</span><span style="color:#f92672">:</span>
+   [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>]]
+ 
+<span style="color:#a6e22e">test_text_seq</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">token</span>.<span style="color:#a6e22e">texts_to_sequences</span>(<span style="color:#a6e22e">test_text</span>)
+<span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">test_text_seq</span>)
+
+<span style="color:#a6e22e">輸出</span><span style="color:#f92672">:</span>
+   [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>]]
+</code></pre></div><p><strong>注意:   這裡因為字典裡沒有&quot;奇異果&quot;的字，所以test_text轉成數字向量時，該字就會沒有對應</strong></p>
+</li>
+<li>
+<h4 id="5設定每個向量矩陣之長度即為將每段文字補到一樣大小才能做訓練maxlen表示要補到多少大小">5.設定每個向量矩陣之長度，即為將每段文字補到一樣大小，才能做訓練，maxlen表示要補到多少大小</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">train</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sequence</span>.<span style="color:#a6e22e">pad_sequences</span>(<span style="color:#a6e22e">train_text_seq</span>, <span style="color:#a6e22e">maxlen</span><span style="color:#f92672">=</span><span style="color:#a6e22e">maxlen</span>)
+  
+<span style="color:#a6e22e">test</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sequence</span>.<span style="color:#a6e22e">pad_sequences</span>(<span style="color:#a6e22e">test_text_seq</span>, <span style="color:#a6e22e">maxlen</span><span style="color:#f92672">=</span><span style="color:#a6e22e">maxlen</span>)
+</code></pre></div></li>
+<li>
+<h4 id="6儲存字典">6.儲存字典</h4>
+<ul>
+<li>該wb指示文件被打開以二進制方式寫作</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">   <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;.\\token.pickle&#39;</span>, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">handle</span><span style="color:#f92672">:</span>
+      <span style="color:#a6e22e">pickle</span>.<span style="color:#a6e22e">dump</span>(<span style="color:#a6e22e">token</span>, <span style="color:#a6e22e">handle</span>, <span style="color:#a6e22e">protocol</span><span style="color:#f92672">=</span><span style="color:#a6e22e">pickle</span>.<span style="color:#a6e22e">HIGHEST_PROTOCOL</span>)
+</code></pre></div></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Andrea.Hsu </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://andreahsu.github.io/2021/build_dict/>https://andreahsu.github.io/2021/build_dict/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://andreahsu.github.io/tags/nlp/">
+                    #NLP</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://andreahsu.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://andreahsu.github.io/2021/nlp_01/" class="prev" rel="prev" title="NLP_01"><i class="iconfont icon-left"></i>&nbsp;NLP_01</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2021 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://andreahsu.github.io">Andrea.Hsu</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
