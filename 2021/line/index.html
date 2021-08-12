@@ -43,10 +43,10 @@
                 method: 'POST',
                 mode: 'cors',
             }).then(res => {
-                return res.json();   // 使用 json() 可以得到 json 物件
+                return res.text();   // 使用 text() 可以得到純文字 String
             }).then(result => {
-                console.log(result); // 得到 {name: "oxxo", age: 18, text: "你的名字是 oxxo，年紀 18 歲～"}
-            })
+                console.log(result); // 得到「你的名字是：oxxo，年紀：18 歲。」
+            });
                 // .then(response => {
                 //     console.log(response)
                 //     response.json()
@@ -62,7 +62,7 @@
                 postData('https://andreahsu.github.io/2021/line/currency_exchange', { twd: twdInput })
                     .then(data => {
                         alert('1', data);
-                        alert('1');
+                        alert('188888');
                         liff.sendMessages([{
                             'type': 'text',
                             'text': "你有這麼多美金：" + data['result']
