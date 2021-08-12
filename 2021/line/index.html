@@ -42,15 +42,16 @@
                 },
                 method: 'POST',
                 mode: 'cors',
-            }).then(res => {
-                return res.text();   // 使用 text() 可以得到純文字 String
-            }).then(result => {
-                console.log(result); // 得到「你的名字是：oxxo，年紀：18 歲。」
-            });
-                // .then(response => {
-                //     console.log(response)
-                //     response.json()
-                // }) // 輸出成 json
+            })
+            // .then(res => {
+            //     return res.text();   // 使用 text() 可以得到純文字 String
+            // }).then(result => {
+            //     console.log(result); // 得到「你的名字是：oxxo，年紀：18 歲。」
+            // });
+                .then(response => {
+                    alert(response)
+                    response.json()
+                }) // 輸出成 json
         }
 
 
