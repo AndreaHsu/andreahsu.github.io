@@ -59,7 +59,7 @@
             if (!liff.isInClient()) {
                 sendAlertIfNotInClient();
             } else {
-                const twdInput = parseInt(document.querySelector("input").value)
+                const twdInput = document.querySelector("input").value
                 // const twdInput = parseInt(document.getElementById('twd-input').value);
                 alert(twdInput)
                 postData('https://andreahsu.github.io/2021/line/currency_exchange', { twd: twdInput })
