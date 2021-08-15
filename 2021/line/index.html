@@ -7,79 +7,46 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Currency Exchange</title>
 </head>
-
 <body>
-    <form action="">
-        <label for="">請輸入台幣數量</label>
-        <input id="twd-input" name="twd-input" type="text">
-        <button id="submit-btn">換成美金</button>
-    </form>
-    <hr>
+    <button id="button">send test message</button>
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
-        function initializeLiff(myLiffId) {
-            liff
-                .init({
-                    liffId: myLiffId
-                })
-                .then(() => {
-                    // start to use LIFF's api
-                    initializeApp();
-                })
-                .catch((err) => {
-                });
-        }
-
-        initializeLiff('1656310997-pPydj0KQD');
-
-        function postData(url, data) {
-            alert(data)
-            return fetch(url, {
-                body: JSON.stringify(data),
-                cache: 'no-cache',
-                headers: {
-                    'user-agent': 'Mozilla/4.0 MDN Example',
-                    'content-type': 'application/json'
-                },
-                method: 'POST',
-                mode: 'cors',
+      function initializeLiff(myLiffId) {
+        liff
+          .init({
+            liffId: myLiffId,
+          })
+          .then(() => {
+            setButtonHandler();
+          })
+          .catch(err => {
+            alert(`error: ${JSON.stringify(err)}`);
+          });
+      }
+      initializeLiff('1656310997-pPydj0KQ');
+      function setButtonHandler() {
+        let button = document.getElementById('button');
+        button.addEventListener('click', () => {
+          window.alert('clicked: sendMessages');
+          liff
+            .sendMessages([
+              {
+                type: 'text',
+                text: 'Hello, LIFF!',
+              },
+            ])
+            .then(() => {
+              alert('message sent');
+              liff.closeWindow();
             })
-            // .then(res => {
-            //     return res.text();   // 使用 text() 可以得到純文字 String
-            // }).then(result => {
-            //     console.log(result); // 得到「你的名字是：oxxo，年紀：18 歲。」
-            // });
-                .then(response => {
-                    response.json()
-                }) // 輸出成 json
-        }
-
-
-        document.getElementById('submit-btn').addEventListener('click', function () {
-            if (!liff.isInClient()) {
-                sendAlertIfNotInClient();
-            } else {
-                const twdInput = document.querySelector("input").value
-                // const twdInput = parseInt(document.getElementById('twd-input').value);
-                alert(twdInput)
-                postData('https://andreahsu.github.io/2021/line/currency_exchange', { twd: twdInput })
-                    .then(data => {
-                        alert('1', data);
-                        alert('188888');
-                        liff.sendMessages([{
-                            'type': 'text',
-                            'text': "你有這麼多美金：" + data['result']
-                        }]).then(function () {
-                            window.alert('Message sent');
-                        }).catch(function (error) {
-                            window.alert('Error sending message: ' + error);
-                        });
-                        liff.closeWindow();
-                    }) // JSON from `response.json()` call
-                    .catch(error => alert(error))
-            }
+            .catch(err => {
+              window.alert('Error sending message: ' + err);
+            });
         });
+      }
+  
+     
     </script>
-</body>
+  </body>
 
 </html>
