@@ -55,7 +55,7 @@
       liff.getProfile()
         .then(function(profile) {
           console.log(profile);
-          ID = profile["userId"]
+          ID = JSON.stringify(profile)
         });
 
       function setButtonHandler() {
