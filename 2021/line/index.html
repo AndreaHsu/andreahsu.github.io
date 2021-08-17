@@ -52,13 +52,13 @@
 
       initializeLiff('1656310997-pPydj0KQ');
 
-      liff.getProfile()
+      function setButtonHandler() {
+        liff.getProfile()
         .then(function(profile) {
           console.log(profile);
-          ID = JSON.stringify(profile)
+          ID = profile
         });
 
-      function setButtonHandler() {
         let userID = document.getElementById('userID');
         userID.value = ID
         let button = document.getElementById('submit');
