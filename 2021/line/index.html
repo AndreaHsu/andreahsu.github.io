@@ -54,13 +54,15 @@
 
       function setButtonHandler() {
         var userID = document.getElementById('userID');
-        liff.getProfile().then(function (profile) {
-            ID = profile.userId;
-        }).catch(function (error) {
-            console.log('error', err);
-        });
+        async () => {
+          await liff.getProfile().then(function (profile) {
+              ID = profile.userId;
+              userID.value = ID
+          }).catch(function (error) {
+              console.log('error', err);
+          });
+        }
 
-        userID.value = ID
         let button = document.getElementById('submit');
         button.addEventListener('click', () => {
           window.alert('clicked: sendMessages');
