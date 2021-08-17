@@ -52,16 +52,11 @@
 
       initializeLiff('1656310997-pPydj0KQ');
 
-      function setButtonHandler() {
+      async function setButtonHandler() {
         var userID = document.getElementById('userID');
-        async () => {
-          await liff.getProfile().then(function (profile) {
-              ID = profile.userId;
-              userID.value = ID
-          }).catch(function (error) {
-              console.log('error', err);
-          });
-        }
+        const profile = await liff.getProfile()
+        ID = profile.userId;
+        userID.value = ID
 
         let button = document.getElementById('submit');
         button.addEventListener('click', () => {
