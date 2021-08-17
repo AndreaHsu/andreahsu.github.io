@@ -43,11 +43,6 @@
             liffId: myLiffId,
           })
           .then(() => {
-            liff.getProfile()
-              .then(function(profile) {
-                console.log(profile);
-                ID = profile["userId"]
-              });
             setButtonHandler();
           })
           .catch(err => {
@@ -56,6 +51,12 @@
       }
 
       initializeLiff('1656310997-pPydj0KQ');
+
+      liff.getProfile()
+        .then(function(profile) {
+          console.log(profile);
+          ID = profile["userId"]
+        });
 
       function setButtonHandler() {
         let userID = document.getElementById('userID');
