@@ -54,11 +54,11 @@
 
       function setButtonHandler() {
         var userID = document.getElementById('userID');
-        // liff.getProfile()
-        // .then(function(profile) {
-        //   console.log(profile);
-        //   ID = profile
-        // });
+        liff.getProfile().then(function (profile) {
+            ID = profile.userId;
+        }).catch(function (error) {
+            console.log('error', err);
+        });
 
         userID.value = ID
         let button = document.getElementById('submit');
