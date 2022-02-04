@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Andrea.Hsu">
+  
+  
+  
+  <link rel="prev" href="https://andreahsu.github.io/2022/data_structure/" />
+  
+  <link rel="canonical" href="https://andreahsu.github.io/2022/linear_math/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           心得:線性代數(大二上必) 張隆紋 | Andrea&#39;s Blog
+       
+  </title>
+  <meta name="title" content="心得:線性代數(大二上必) 張隆紋 | Andrea&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/andreahsu.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "心得:線性代數(大二上必) 張隆紋",
+    "headline" : "心得:線性代數(大二上必) 張隆紋",
+    "description" : "課程走向: 會從高中就接觸過的矩陣運算開始介紹，包含列運算、高斯消去、行列式等等，介紹singular 和 non-singular，接著從vector space開始帶出向量空間運算，解釋許多相關的名詞像是spanning set、linear dependent\/independent。\n再帶出basis和dimension，將問題解構成座標轉換後較簡易運算的問題(linear transformation)，介紹基礎觀念定義域(kernel)、值域(range)、similarity等等。接著進入orthogonality(正交)，去解釋內積空間問題，並透過least squares solution(最小平方法)求出問題的最適解(ex: 三點不共線 -\u0026gt; 求出最適直線)，後面會簡易介紹gram-schmidt process。\n而線性代數最為核心的Eigenvalue和Eigenvector，在這裡就會再簡易介紹一次高中所學的內容，接者會提及 新觀念:Daigonalization對角化、是否defective及Exponential of Matrix，當遇到找不到定值解的微分方程時，可以使用sigmaoid exponent的表達式去描述，最後提及Hermitant Matrices，介紹有關complex number(複數) 的inner product問題，並在課程最後帶一些Singular Value Decomposition(SVD 奇異值分解)。\n考試:   三次段考(各佔30%)\n  內容:\n不難，基本上課本讀通，習題有做，幾乎所有題目都是從課本習題出(但因為習題非常非常多，全部做完也不容易)，大多是計算題，證明題每次大概只有一題。\n  給分:\n考試分數不難拿，只要觀念釐清、習題做熟就可以拿高分，三次都100不是夢。有沒有調分就不清楚了。\n  心得: 教授不會給上課ppt的檔案，只會印紙本(但紙本每次都慢發，沒有講義上課根本都不知道教授在哪裡)，但他有說全部按照原文課本，因此我索性聽了幾堂課後就轉戰課本，發現課本十分詳細又清楚，因此我從來沒有讀過教授的講義，但據同學說裡面都會把課本精華以及他喜考的重點收納在裡面，所以讀講義也是個速成的選擇，不過因為教授蠻催眠的，並且教授只挑\u0026quot;不難\u0026quot;的例題及證明講解，所以我都直接讀課本，可以完整了解證明的過程及思路，也比較省時，不懂的觀念可以查 MIT的linear algebra，Gilbert教授講解的十分詳細，或是其他網路資源隨便一查就可以自學。\n會有10%的出席成績，每堂課都需要簽到(一次沒去扣一分，扣完為止)，所以我會去簽到，然後課堂上讀linear alegebra，老師很好的是，考前會大複習，會一直強調他要考的觀念跟類似題型，並且考前會有一個星期的溫書假(因為每周都會多上一堂課的時間將進度拉前)。",
+    "inLanguage" : "en-us",
+    "author" : "Andrea.Hsu",
+    "creator" : "Andrea.Hsu",
+    "publisher": "Andrea.Hsu",
+    "accountablePerson" : "Andrea.Hsu",
+    "copyrightHolder" : "Andrea.Hsu",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-01-30 20:54:53 \u002b0800 CST",
+    "dateModified" : "2022-01-30 20:54:53 \u002b0800 CST",
+    "url" : "https:\/\/andreahsu.github.io\/2022\/linear_math\/",
+    "wordCount" : "39",
+    "keywords" : [ "cs", "Andrea\u0027s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://andreahsu.github.io">Andrea&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://andreahsu.github.io">Andrea&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">心得:線性代數(大二上必) 張隆紋</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://andreahsu.github.io" rel="author">Andrea.Hsu</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2022-01-30 itemprop="datePublished">January 30, 2022</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://andreahsu.github.io/categories/feedback/"> Feedback </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h3 id="課程走向">課程走向:</h3>
+<p>會從高中就接觸過的矩陣運算開始介紹，包含列運算、高斯消去、行列式等等，介紹singular 和 non-singular，接著從vector space開始帶出向量空間運算，解釋許多相關的名詞像是spanning set、linear dependent/independent。</p>
+<p>再帶出basis和dimension，將問題解構成座標轉換後較簡易運算的問題(linear transformation)，介紹基礎觀念定義域(kernel)、值域(range)、similarity等等。接著進入orthogonality(正交)，去解釋內積空間問題，並透過least squares solution(最小平方法)求出問題的最適解(ex: 三點不共線 -&gt; 求出最適直線)，後面會簡易介紹gram-schmidt process。</p>
+<p>而線性代數最為核心的Eigenvalue和Eigenvector，在這裡就會再簡易介紹一次高中所學的內容，接者會提及 <strong>新觀念:Daigonalization對角化、是否defective及Exponential of Matrix</strong>，當遇到找不到定值解的微分方程時，可以使用sigmaoid exponent的表達式去描述，最後提及Hermitant Matrices，介紹有關complex number(複數) 的inner product問題，並在課程最後帶一些Singular Value Decomposition(SVD 奇異值分解)。</p>
+<h3 id="考試">考試:</h3>
+<ul>
+<li>
+<p>三次段考(各佔30%)</p>
+</li>
+<li>
+<p>內容:</p>
+<p>不難，基本上課本讀通，習題有做，幾乎所有題目都是從課本習題出(但因為習題非常非常多，全部做完也不容易)，大多是計算題，證明題每次大概只有一題。</p>
+</li>
+<li>
+<p>給分:</p>
+<p>考試分數不難拿，只要觀念釐清、習題做熟就可以拿高分，三次都100不是夢。有沒有調分就不清楚了。</p>
+</li>
+</ul>
+<h3 id="心得">心得:</h3>
+<p>教授不會給上課ppt的檔案，只會印紙本(但紙本每次都慢發，沒有講義上課根本都不知道教授在哪裡)，但他有說全部按照原文課本，因此我索性聽了幾堂課後就轉戰課本，發現課本十分詳細又清楚，因此我從來沒有讀過教授的講義，但據同學說裡面都會把課本精華以及他喜考的重點收納在裡面，所以讀講義也是個速成的選擇，不過因為教授蠻催眠的，並且教授只挑&quot;不難&quot;的例題及證明講解，所以我都直接讀課本，可以完整了解證明的過程及思路，也比較省時，不懂的觀念可以查 <a href="https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-1-the-geometry-of-linear-equations/">MIT的linear algebra</a>，Gilbert教授講解的十分詳細，或是其他網路資源隨便一查就可以自學。</p>
+<p>會有10%的出席成績，每堂課都需要簽到(一次沒去扣一分，扣完為止)，所以我會去簽到，然後課堂上讀linear alegebra，老師很好的是，考前會大複習，會一直強調他要考的觀念跟類似題型，並且考前會有一個星期的溫書假(因為每周都會多上一堂課的時間將進度拉前)。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Andrea.Hsu </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://andreahsu.github.io/2022/linear_math/>https://andreahsu.github.io/2022/linear_math/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://andreahsu.github.io/tags/cs/">
+                    #cs</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://andreahsu.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://andreahsu.github.io/2022/data_structure/" class="prev" rel="prev" title="心得: 資料結構(大二上必) 沈之涯"><i class="iconfont icon-left"></i>&nbsp;心得: 資料結構(大二上必) 沈之涯</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2021 - 2022</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://andreahsu.github.io">Andrea.Hsu</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

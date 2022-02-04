@@ -6,7 +6,78 @@
     <description>Recent content in Feedback on Andrea&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Jul 2021 20:33:43 +0800</lastBuildDate><atom:link href="https://andreahsu.github.io/categories/feedback/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jan 2022 20:54:53 +0800</lastBuildDate><atom:link href="https://andreahsu.github.io/categories/feedback/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>心得:線性代數(大二上必) 張隆紋</title>
+      <link>https://andreahsu.github.io/2022/linear_math/</link>
+      <pubDate>Sun, 30 Jan 2022 20:54:53 +0800</pubDate>
+      
+      <guid>https://andreahsu.github.io/2022/linear_math/</guid>
+      <description>課程走向: 會從高中就接觸過的矩陣運算開始介紹，包含列運算、高斯消去、行列式等等，介紹singular 和 non-singular，接著從vector space開始帶出向量空間運算，解釋許多相關的名詞像是spanning set、linear dependent/independent。
+再帶出basis和dimension，將問題解構成座標轉換後較簡易運算的問題(linear transformation)，介紹基礎觀念定義域(kernel)、值域(range)、similarity等等。接著進入orthogonality(正交)，去解釋內積空間問題，並透過least squares solution(最小平方法)求出問題的最適解(ex: 三點不共線 -&amp;gt; 求出最適直線)，後面會簡易介紹gram-schmidt process。
+而線性代數最為核心的Eigenvalue和Eigenvector，在這裡就會再簡易介紹一次高中所學的內容，接者會提及 新觀念:Daigonalization對角化、是否defective及Exponential of Matrix，當遇到找不到定值解的微分方程時，可以使用sigmaoid exponent的表達式去描述，最後提及Hermitant Matrices，介紹有關complex number(複數) 的inner product問題，並在課程最後帶一些Singular Value Decomposition(SVD 奇異值分解)。
+考試:   三次段考(各佔30%)
+  內容:
+不難，基本上課本讀通，習題有做，幾乎所有題目都是從課本習題出(但因為習題非常非常多，全部做完也不容易)，大多是計算題，證明題每次大概只有一題。
+  給分:
+考試分數不難拿，只要觀念釐清、習題做熟就可以拿高分，三次都100不是夢。有沒有調分就不清楚了。
+  心得: 教授不會給上課ppt的檔案，只會印紙本(但紙本每次都慢發，沒有講義上課根本都不知道教授在哪裡)，但他有說全部按照原文課本，因此我索性聽了幾堂課後就轉戰課本，發現課本十分詳細又清楚，因此我從來沒有讀過教授的講義，但據同學說裡面都會把課本精華以及他喜考的重點收納在裡面，所以讀講義也是個速成的選擇，不過因為教授蠻催眠的，並且教授只挑&amp;quot;不難&amp;quot;的例題及證明講解，所以我都直接讀課本，可以完整了解證明的過程及思路，也比較省時，不懂的觀念可以查 MIT的linear algebra，Gilbert教授講解的十分詳細，或是其他網路資源隨便一查就可以自學。
+會有10%的出席成績，每堂課都需要簽到(一次沒去扣一分，扣完為止)，所以我會去簽到，然後課堂上讀linear alegebra，老師很好的是，考前會大複習，會一直強調他要考的觀念跟類似題型，並且考前會有一個星期的溫書假(因為每周都會多上一堂課的時間將進度拉前)。</description>
+    </item>
+    
+    <item>
+      <title>心得: 資料結構(大二上必) 沈之涯</title>
+      <link>https://andreahsu.github.io/2022/data_structure/</link>
+      <pubDate>Sun, 30 Jan 2022 20:54:43 +0800</pubDate>
+      
+      <guid>https://andreahsu.github.io/2022/data_structure/</guid>
+      <description>課程走向: 從基本的c++開始重新介紹，並簡述Algorithm(像是time complexity:big O)，接著進入Array、Stack、Queue、Link List、Tree的講解，而在Tree的部分會帶出prefix、infix、postfix 的應用，基本上這部分在程式設計二時已經有接觸過，同時也是期中考的範圍。接著會開始帶新觀念:Graph、Sorting、Hashing，會搭配課程出相關的作業，到學期末會講解關於字典樹(trie、suffix tree&amp;hellip;)的algorithm，有便於應用在final project。
+作業: 每兩周會出一次作業，每次期限是2星期，需要繳交作業檔案，忌諱抄襲。
+考試:   兩次考試(期中和期末，各佔20%)
+  會有隨堂小考(算在點名分數):
+會前一節課預告，基本上一次兩題，一題是寫出用特定演算法解題的步驟(過程)，另一題偏向需要思考新的方法或是證明。
+  每兩周上機考一次，一學期共6次(占分15%):
+每次2小時，每次6筆測資，不是每次和作業相關，但進度到哪就會跟內容範圍內的知識相關，有時候很難，過一筆就有60分，基本上越後面的測資越困難，後面的側資都很大，或是很極端，所以變數型別很重要，最好能開到unsigned long long去避免是overflow才導致的錯誤，多一筆大致上就多10分。
+難度:4顆星，難，有時候知道該題跟甚麼內容相關，也知道應該要用甚麼algorithm，但就是不知道要怎麼用進去。
+  期中&amp;amp;期末:
+會有一半的基本分，但雖然說是基本分，也很容易因為小粗心就全部失分，所以最好是能將所有基本分數都把握住。 會有一半很難需要思考的題目，思考了也不一定能做出來，這一半之中是由證明題、閱讀題跟想出更好的algorithm的題目組成。雖然不一定會，但是可以盡量將想到的都寫出來，有想法比沒有好，而且助教也能根據回答斟酌給分，此外，考古題很重要，因為這一半很難的題目中會有1~2題是考古，一模一樣，老師敢考出來個人猜測基本上也是因為，這些題目就算做過也不一定當場就推得出來，需要縝密思考且真的有釐清才行。
+給分: 筆試給分很善良，但是那是建立在你有寫出東西，總體還是蠻慘的。不過老師說原始分數都是對班上ranking的一個標準，並不是實際學期的分數，總分部分老師會調分。
+  project: 每一屆不一樣，我們這屆是要實作出類似搜尋引擎的功能，給很多篇essay，每篇分別有title跟內文，給定query，須找出包含特定字or字首or字尾的essay，並且需要找出給定query的交集或聯集。
+附上的教學內容有trie跟suffix tree，最直接的作法是每篇文章見兩個trie，一正一反，根據每個詞建在正的trie中，跟將詞reverse後建在反的trie中，最後根據query搜尋每篇文章的兩個trie，即可找出是否包含給定query的文章了。
+心得: 教授是一個很年輕、邏輯清晰的老師，學期初會警告我們不要聽網路上說這門課選老師的很甜之類的，但是很替學生著想，考題難度很夠但最後分數又不會很刁難學生。 老師觀念跟algorithm的步驟都講解得很清楚，教材也都有做動畫很易懂，我還蠻喜歡老師的。 但是這堂課叫做&amp;quot;資料結構&amp;quot;，應該比較偏向教導遇到甚麼資料應該用甚麼結構儲存，但整體課程都偏向講解algorithm，雖然學到很多，但跟這堂課可能有些不太符合。 不過總體而言，這門課還是獲益良多的一門課的!</description>
+    </item>
+    
+    <item>
+      <title>心得:邏輯設計實驗(大二上必) 李濬屹</title>
+      <link>https://andreahsu.github.io/2022/logic_design_experiment/</link>
+      <pubDate>Sun, 30 Jan 2022 20:54:20 +0800</pubDate>
+      
+      <guid>https://andreahsu.github.io/2022/logic_design_experiment/</guid>
+      <description>課程走向: 會從基礎的ic design開始介紹，前半個學期都會聚焦在verilog，從基礎語法、到撰寫module、劃分hierarchy，並且教導如何將code燒入FPGA， 在這堂課中會讓我們熟悉FPGA操作，從接線、switch、LED、7-segment display等等。後半個學期會專注在coding style，並且詳細介紹將其他電子材料(組件，像是鍵盤、音響、螢幕、馬達電動車等等)接上FPGA，如何接訊號並教導撰寫verilog透過FPGA控制。 由於作業和final project需要和同學合力完成，因此上課規定2人一組，可自行挑選隊友，也可以讓老師分發。
+作業:   型式:
+每兩週一次，每次作業期限是1星期，幾乎每次的作業都是小組作業。 每次作業的basic題目是上機考須完成的內容，而advance的題目則為作業，會有4~5題，加上1題須實作入FPGA裡的，繳交期限當天要當場demo FPGA作業。 每次作業繳交時都需要交設計的.v檔、testbench、跟report，report要詳述如何設計，並需要繪製blockdiagram說明整體。
+  內容:
+基本上advance的題目都需要時間去理解題目，當然有平易近人的題目，但大多都是要詳細去思考整體架構該如何設計、怎麼劃分，電路該怎麼接，以及考慮一些可能未考慮到的狀況。 此外，需撰寫testbench去測試自己的code有沒有甚麼問題，寫testbench真的對偵錯有很大的幫助，可以迅速知道自己有沒有接錯線路。 FPGA題目從最簡單亮LED燈，到用FPGA實作1A2B遊戲跟販賣機，後期會接上馬達電動車跟VGA螢幕顯示，架構會越來越複雜，兩個人可以互相討論並分工合作真的很棒(前提請找到好隊友XD)，可以切割sub module在互相組合完成FPGA題目。
+  難度與作業給分:
+難度 5顆星，評分的方式為助教會使用他們的testbench測試我們繳交的code，若通過測試則code部分分數應該會全拿，剩下就是report分數(占比個人認為很重)，因為即使code都通過了，但report漏寫或是寫得不好，扣分蠻重的; 反之，若code沒有通過測試，但report撰寫詳細(即讓批閱者能理解整體設計架構跟邏輯是正確的，可能出小差錯)，則分數還是很高的。
+  考試:   二次段考(期中和期末)
+  每兩周上機考一次，須當場做出並給助教demo，可以和同學討論，作業也會在上機考當周公布，當周的下周就是繳交作業期限。
+  內容:
+都跟作業有相當大的關係，作業只要有好好寫，基本看到題目不會太慌張，但是，能不能寫對就是憑個人細心，因為寫verilog時很容易不小心接錯線，就一步錯全部錯了，而且考試是直接整題沒有分數(沒有部份分數)。 而考試只會給input、output名字，語法之類的完全不會給，因此考試務必要 非常非常熟悉 verilog。 而寫testbench也很重要，因為這可以幫助你偵測是寫錯code，但是很容易沒有時間作完所有題目，只要不小心一題沒有掌控好時間，就會寫不完。時間掌握很重要 另外，每次考試大概4-5題，其中會有一題是FPGA題目，當場寫出來給助教dmeo過關就有分數，通常如果有把握會寫FPGA，那就先寫，把該拿的分數先拿到手，避免後面大家都搶著demo過了考試時間。
+  project: 這堂課只有最後需要兩人合力完成一個final project，題目任意發揮，只要做出你的酷東西(教授真的特別特別強調這個)，期末展示給教授和助教看，需要稍微簡介/報告作品，主要評分為完整性、困難性、以及創意性等等，最後當然也要繳交report，來說明整體設計及中間的嘗試、困難與解方。
+網路上有許多作品，像是夾娃娃機、或是一些透過FPGA控制的外接螢幕小遊戲，所以老師希望能夠看到別具一格的創意。
+加分項目是，能將ML融合進final project中(意即將ML模型刻入FPGA)，並且有實際在final project中發揮作用，就可以加分。
+我們這屆有人做出很有趣的小遊戲，像是數獨、1A2B等等有關可以手寫數字的小遊戲，也順便應用了ML。不含ML的作品也有像是，音樂與燈光的互動裝置、天竺鼠藍芽車車等等&amp;hellip;&amp;hellip;，許多令人印象深刻的作品。
+心得&amp;amp;困境&amp;amp;方法: 這是這個學期花最多心力和腦袋的一門課，還有肝XD但不得不說，真的很充實，老師跟助教都非常認真，上課講義非常詳細，下課若預約TA time助教也都會很有耐心的解答問題，老師是一個很親民的人，我們每堂上機老師都會到場，在demo馬達車車或是final project時也都會在一旁錄影，而且很喜歡跟學生討論問題，而且很鼓勵我們多嘗試新的酷咚咚。
+而我在這門課學到三大能力: 設計電路，撰寫verilog、耐心和debug方法、溝通與體恤
+經常聽到很厲害的同學說「邏輯設計真正的核心是，如何設計電路，而不是code怎麼寫」，因此他們總說寫成事前先畫圖，把架構跟接線畫出來，這樣寫程式就會快輕鬆且容易許多，這也是老師會要求我們在每次作業都要繳交report，並繪製block diagram的原因，只要邏輯清晰，寫code就不難。
+但一開始還在摸索硬體語言的我完全不懂，每每遇到題目都要debug好久，而且每次report用draw.io繪製一張diagram動輒就要1、2個小時，所以我經常每兩周就要大熬夜一次，對於每天12.睡覺的我真的很破壞作息。
+但是在幾次的作業下來後慢慢抓住了一些手感，也當然因為有隊友可以互相討論，讓我可以在撰寫前先跟隊友討論一下對實做的一些問題和設計架構，也從討論中可以看到不一樣的觀點，時常會有「阿~原來還可以這樣做!」那種醍醐灌頂的感覺，而且可以從作業中自己踩坑自己爬起來，更加印象深刻，對FPGA或是硬體電路設計跟verilog有更進一步的了解。
+因為作業的期限是1周，加上我的不熟悉，常常讓我一題明明寫出來了卻找不出bug，debug總是花掉我很多時間，如果還算入report跟繪圖的時間，我幾乎要交作業的那周天天都在寫verilog。我時常詢問一些厲害的同學他們是怎麼跟去debug、或是明明跟我一樣都是第一次接觸硬體語言，他們是怎麼去適應並熟悉的，也透過他們的分享，讓我知道像是可以結合以前所學，把中間運算的東西外接output，看看是哪裡出錯，才不用死死盯著code卻百思不得其解等等的知識。然後，若陷入太久，可以轉換心情，轉移注意力，隔一段時間再回來看看，或許會有新的發現。
+最後，因為這堂課幾乎所有作業都要2人小組完成，因此，我也跟我的隊友成為蠻要好的朋友，雖然我們會有意見不合的時候，會有時間喬不攏的時候，但是我們會一起鼓勵彼此，一起衝刺趕在期限內完成作業，有時候他體諒我有社團，有時候我體諒他有考試，我們總是在溝通的過程中能互相體恤對方的立場，有時候我們各自輪流雷想向對方道歉時，彼此卻又總會安慰對方，並且體諒對方，真的覺得這是一件難能可貴的事，因為合作必有磨合，而能在磨合下還能互相鼓勵扶持，真的很不簡單:)
+我們final project也做出了我們想像中的酷東西，不想要明明是硬體設計課卻單純只做純軟體的應用，我們一起構思出與硬體結合的酷project，一起為仙人掌笑到翻掉，一起逛電子材料行，一起第一次在資電館過夜，一起在完事後大爆睡，老實說真的很累，但真的很充實，而我們也都為自己的酷東西感到驕傲:)</description>
+    </item>
+    
     <item>
       <title>心得:離散數學(大一上必) 韓永楷</title>
       <link>https://andreahsu.github.io/2021/discete_math/</link>

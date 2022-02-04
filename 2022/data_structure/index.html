@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Andrea.Hsu">
+  
+  
+  
+  <link rel="prev" href="https://andreahsu.github.io/2022/logic_design_experiment/" />
+  <link rel="next" href="https://andreahsu.github.io/2022/linear_math/" />
+  <link rel="canonical" href="https://andreahsu.github.io/2022/data_structure/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           心得: 資料結構(大二上必) 沈之涯 | Andrea&#39;s Blog
+       
+  </title>
+  <meta name="title" content="心得: 資料結構(大二上必) 沈之涯 | Andrea&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/andreahsu.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "心得: 資料結構(大二上必) 沈之涯",
+    "headline" : "心得: 資料結構(大二上必) 沈之涯",
+    "description" : "課程走向: 從基本的c\u002b\u002b開始重新介紹，並簡述Algorithm(像是time complexity:big O)，接著進入Array、Stack、Queue、Link List、Tree的講解，而在Tree的部分會帶出prefix、infix、postfix 的應用，基本上這部分在程式設計二時已經有接觸過，同時也是期中考的範圍。接著會開始帶新觀念:Graph、Sorting、Hashing，會搭配課程出相關的作業，到學期末會講解關於字典樹(trie、suffix tree\u0026hellip;)的algorithm，有便於應用在final project。\n作業: 每兩周會出一次作業，每次期限是2星期，需要繳交作業檔案，忌諱抄襲。\n考試:   兩次考試(期中和期末，各佔20%)\n  會有隨堂小考(算在點名分數):\n會前一節課預告，基本上一次兩題，一題是寫出用特定演算法解題的步驟(過程)，另一題偏向需要思考新的方法或是證明。\n  每兩周上機考一次，一學期共6次(占分15%):\n每次2小時，每次6筆測資，不是每次和作業相關，但進度到哪就會跟內容範圍內的知識相關，有時候很難，過一筆就有60分，基本上越後面的測資越困難，後面的側資都很大，或是很極端，所以變數型別很重要，最好能開到unsigned long long去避免是overflow才導致的錯誤，多一筆大致上就多10分。\n難度:4顆星，難，有時候知道該題跟甚麼內容相關，也知道應該要用甚麼algorithm，但就是不知道要怎麼用進去。\n  期中\u0026amp;期末:\n會有一半的基本分，但雖然說是基本分，也很容易因為小粗心就全部失分，所以最好是能將所有基本分數都把握住。 會有一半很難需要思考的題目，思考了也不一定能做出來，這一半之中是由證明題、閱讀題跟想出更好的algorithm的題目組成。雖然不一定會，但是可以盡量將想到的都寫出來，有想法比沒有好，而且助教也能根據回答斟酌給分，此外，考古題很重要，因為這一半很難的題目中會有1~2題是考古，一模一樣，老師敢考出來個人猜測基本上也是因為，這些題目就算做過也不一定當場就推得出來，需要縝密思考且真的有釐清才行。\n給分: 筆試給分很善良，但是那是建立在你有寫出東西，總體還是蠻慘的。不過老師說原始分數都是對班上ranking的一個標準，並不是實際學期的分數，總分部分老師會調分。\n  project: 每一屆不一樣，我們這屆是要實作出類似搜尋引擎的功能，給很多篇essay，每篇分別有title跟內文，給定query，須找出包含特定字or字首or字尾的essay，並且需要找出給定query的交集或聯集。\n附上的教學內容有trie跟suffix tree，最直接的作法是每篇文章見兩個trie，一正一反，根據每個詞建在正的trie中，跟將詞reverse後建在反的trie中，最後根據query搜尋每篇文章的兩個trie，即可找出是否包含給定query的文章了。\n心得: 教授是一個很年輕、邏輯清晰的老師，學期初會警告我們不要聽網路上說這門課選老師的很甜之類的，但是很替學生著想，考題難度很夠但最後分數又不會很刁難學生。 老師觀念跟algorithm的步驟都講解得很清楚，教材也都有做動畫很易懂，我還蠻喜歡老師的。 但是這堂課叫做\u0026quot;資料結構\u0026quot;，應該比較偏向教導遇到甚麼資料應該用甚麼結構儲存，但整體課程都偏向講解algorithm，雖然學到很多，但跟這堂課可能有些不太符合。 不過總體而言，這門課還是獲益良多的一門課的!",
+    "inLanguage" : "en-us",
+    "author" : "Andrea.Hsu",
+    "creator" : "Andrea.Hsu",
+    "publisher": "Andrea.Hsu",
+    "accountablePerson" : "Andrea.Hsu",
+    "copyrightHolder" : "Andrea.Hsu",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-01-30 20:54:43 \u002b0800 CST",
+    "dateModified" : "2022-01-30 20:54:43 \u002b0800 CST",
+    "url" : "https:\/\/andreahsu.github.io\/2022\/data_structure\/",
+    "wordCount" : "33",
+    "keywords" : [ "cs", "Andrea\u0027s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://andreahsu.github.io">Andrea&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://andreahsu.github.io">Andrea&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">心得: 資料結構(大二上必) 沈之涯</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://andreahsu.github.io" rel="author">Andrea.Hsu</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2022-01-30 itemprop="datePublished">January 30, 2022</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://andreahsu.github.io/categories/feedback/"> Feedback </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h3 id="課程走向">課程走向:</h3>
+<p>從基本的c++開始重新介紹，並簡述Algorithm(像是time complexity:big O)，接著進入Array、Stack、Queue、Link List、Tree的講解，而在Tree的部分會帶出prefix、infix、postfix 的應用，基本上這部分在程式設計二時已經有接觸過，同時也是期中考的範圍。接著會開始帶<strong>新觀念:Graph、Sorting、Hashing</strong>，會搭配課程出相關的作業，到學期末會講解關於字典樹(trie、suffix tree&hellip;)的algorithm，有便於應用在final project。</p>
+<h3 id="作業">作業:</h3>
+<p>每兩周會出一次作業，每次期限是2星期，需要繳交作業檔案，忌諱抄襲。</p>
+<h3 id="考試">考試:</h3>
+<ul>
+<li>
+<p>兩次考試(期中和期末，各佔20%)</p>
+</li>
+<li>
+<p>會有隨堂小考(算在點名分數):</p>
+<p>會前一節課預告，基本上一次兩題，一題是寫出用特定演算法解題的步驟(過程)，另一題偏向需要思考新的方法或是證明。</p>
+</li>
+<li>
+<p>每兩周上機考一次，一學期共6次(占分15%):</p>
+<p>每次2小時，每次6筆測資，不是每次和作業相關，但進度到哪就會跟內容範圍內的知識相關，有時候很難，過一筆就有60分，基本上越後面的測資越困難，<strong>後面的側資都很大，或是很極端，所以變數型別很重要，最好能開到unsigned long long去避免是overflow才導致的錯誤</strong>，多一筆大致上就多10分。</p>
+<p>難度:4顆星，難，有時候知道該題跟甚麼內容相關，也知道應該要用甚麼algorithm，但就是不知道要怎麼用進去。</p>
+</li>
+<li>
+<p>期中&amp;期末:</p>
+<p>會有一半的基本分，但雖然說是基本分，也很容易因為小粗心就全部失分，所以最好是能<strong>將所有基本分數都把握住。</strong>
+會有一半很難需要思考的題目，思考了也不一定能做出來，這一半之中是由證明題、閱讀題跟想出更好的algorithm的題目組成。雖然不一定會，但是可以盡量將想到的都寫出來，有想法比沒有好，而且助教也能根據回答斟酌給分，此外，考古題很重要，因為這一半很難的題目中會有1~2題是考古，一模一樣，老師敢考出來個人猜測基本上也是因為，這些題目就算做過也不一定當場就推得出來，需要縝密思考且真的有釐清才行。</p>
+<p>給分: 筆試給分很善良，但是那是建立在你有寫出東西，總體還是蠻慘的。不過老師說原始分數都是對班上ranking的一個標準，並不是實際學期的分數，總分部分老師會調分。</p>
+</li>
+</ul>
+<h3 id="project">project:</h3>
+<p>每一屆不一樣，我們這屆是要實作出類似搜尋引擎的功能，給很多篇essay，每篇分別有title跟內文，給定query，須找出包含特定字or字首or字尾的essay，並且需要找出給定query的交集或聯集。</p>
+<p>附上的教學內容有trie跟suffix tree，最直接的作法是每篇文章見兩個trie，一正一反，根據每個詞建在正的trie中，跟將詞reverse後建在反的trie中，最後根據query搜尋每篇文章的兩個trie，即可找出是否包含給定query的文章了。</p>
+<h3 id="心得">心得:</h3>
+<p>教授是一個很年輕、邏輯清晰的老師，學期初會警告我們不要聽網路上說這門課選老師的很甜之類的，但是很替學生著想，考題難度很夠但最後分數又不會很刁難學生。
+老師觀念跟algorithm的步驟都講解得很清楚，教材也都有做動畫很易懂，我還蠻喜歡老師的。
+但是這堂課叫做&quot;資料結構&quot;，應該比較偏向教導遇到甚麼資料應該用甚麼結構儲存，但整體課程都偏向講解algorithm，雖然學到很多，但跟這堂課可能有些不太符合。
+不過總體而言，這門課還是獲益良多的一門課的!</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Andrea.Hsu </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://andreahsu.github.io/2022/data_structure/>https://andreahsu.github.io/2022/data_structure/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://andreahsu.github.io/tags/cs/">
+                    #cs</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://andreahsu.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://andreahsu.github.io/2022/logic_design_experiment/" class="prev" rel="prev" title="心得:邏輯設計實驗(大二上必) 李濬屹"><i class="iconfont icon-left"></i>&nbsp;心得:邏輯設計實驗(大二上必) 李濬屹</a>
+         
+        
+        <a href="https://andreahsu.github.io/2022/linear_math/" class="next" rel="next" title="心得:線性代數(大二上必) 張隆紋">心得:線性代數(大二上必) 張隆紋&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2021 - 2022</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://andreahsu.github.io">Andrea.Hsu</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Andrea.Hsu">
+  
+  
+  
+  <link rel="prev" href="https://andreahsu.github.io/2021/discete_math/" />
+  <link rel="next" href="https://andreahsu.github.io/2022/data_structure/" />
+  <link rel="canonical" href="https://andreahsu.github.io/2022/logic_design_experiment/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           心得:邏輯設計實驗(大二上必) 李濬屹 | Andrea&#39;s Blog
+       
+  </title>
+  <meta name="title" content="心得:邏輯設計實驗(大二上必) 李濬屹 | Andrea&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/andreahsu.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "心得:邏輯設計實驗(大二上必) 李濬屹",
+    "headline" : "心得:邏輯設計實驗(大二上必) 李濬屹",
+    "description" : "課程走向: 會從基礎的ic design開始介紹，前半個學期都會聚焦在verilog，從基礎語法、到撰寫module、劃分hierarchy，並且教導如何將code燒入FPGA， 在這堂課中會讓我們熟悉FPGA操作，從接線、switch、LED、7-segment display等等。後半個學期會專注在coding style，並且詳細介紹將其他電子材料(組件，像是鍵盤、音響、螢幕、馬達電動車等等)接上FPGA，如何接訊號並教導撰寫verilog透過FPGA控制。 由於作業和final project需要和同學合力完成，因此上課規定2人一組，可自行挑選隊友，也可以讓老師分發。\n作業:   型式:\n每兩週一次，每次作業期限是1星期，幾乎每次的作業都是小組作業。 每次作業的basic題目是上機考須完成的內容，而advance的題目則為作業，會有4~5題，加上1題須實作入FPGA裡的，繳交期限當天要當場demo FPGA作業。 每次作業繳交時都需要交設計的.v檔、testbench、跟report，report要詳述如何設計，並需要繪製blockdiagram說明整體。\n  內容:\n基本上advance的題目都需要時間去理解題目，當然有平易近人的題目，但大多都是要詳細去思考整體架構該如何設計、怎麼劃分，電路該怎麼接，以及考慮一些可能未考慮到的狀況。 此外，需撰寫testbench去測試自己的code有沒有甚麼問題，寫testbench真的對偵錯有很大的幫助，可以迅速知道自己有沒有接錯線路。 FPGA題目從最簡單亮LED燈，到用FPGA實作1A2B遊戲跟販賣機，後期會接上馬達電動車跟VGA螢幕顯示，架構會越來越複雜，兩個人可以互相討論並分工合作真的很棒(前提請找到好隊友XD)，可以切割sub module在互相組合完成FPGA題目。\n  難度與作業給分:\n難度 5顆星，評分的方式為助教會使用他們的testbench測試我們繳交的code，若通過測試則code部分分數應該會全拿，剩下就是report分數(占比個人認為很重)，因為即使code都通過了，但report漏寫或是寫得不好，扣分蠻重的; 反之，若code沒有通過測試，但report撰寫詳細(即讓批閱者能理解整體設計架構跟邏輯是正確的，可能出小差錯)，則分數還是很高的。\n  考試:   二次段考(期中和期末)\n  每兩周上機考一次，須當場做出並給助教demo，可以和同學討論，作業也會在上機考當周公布，當周的下周就是繳交作業期限。\n  內容:\n都跟作業有相當大的關係，作業只要有好好寫，基本看到題目不會太慌張，但是，能不能寫對就是憑個人細心，因為寫verilog時很容易不小心接錯線，就一步錯全部錯了，而且考試是直接整題沒有分數(沒有部份分數)。 而考試只會給input、output名字，語法之類的完全不會給，因此考試務必要 非常非常熟悉 verilog。 而寫testbench也很重要，因為這可以幫助你偵測是寫錯code，但是很容易沒有時間作完所有題目，只要不小心一題沒有掌控好時間，就會寫不完。時間掌握很重要 另外，每次考試大概4-5題，其中會有一題是FPGA題目，當場寫出來給助教dmeo過關就有分數，通常如果有把握會寫FPGA，那就先寫，把該拿的分數先拿到手，避免後面大家都搶著demo過了考試時間。\n  project: 這堂課只有最後需要兩人合力完成一個final project，題目任意發揮，只要做出你的酷東西(教授真的特別特別強調這個)，期末展示給教授和助教看，需要稍微簡介\/報告作品，主要評分為完整性、困難性、以及創意性等等，最後當然也要繳交report，來說明整體設計及中間的嘗試、困難與解方。\n網路上有許多作品，像是夾娃娃機、或是一些透過FPGA控制的外接螢幕小遊戲，所以老師希望能夠看到別具一格的創意。\n加分項目是，能將ML融合進final project中(意即將ML模型刻入FPGA)，並且有實際在final project中發揮作用，就可以加分。\n我們這屆有人做出很有趣的小遊戲，像是數獨、1A2B等等有關可以手寫數字的小遊戲，也順便應用了ML。不含ML的作品也有像是，音樂與燈光的互動裝置、天竺鼠藍芽車車等等\u0026hellip;\u0026hellip;，許多令人印象深刻的作品。\n心得\u0026amp;困境\u0026amp;方法: 這是這個學期花最多心力和腦袋的一門課，還有肝XD但不得不說，真的很充實，老師跟助教都非常認真，上課講義非常詳細，下課若預約TA time助教也都會很有耐心的解答問題，老師是一個很親民的人，我們每堂上機老師都會到場，在demo馬達車車或是final project時也都會在一旁錄影，而且很喜歡跟學生討論問題，而且很鼓勵我們多嘗試新的酷咚咚。\n而我在這門課學到三大能力: 設計電路，撰寫verilog、耐心和debug方法、溝通與體恤\n經常聽到很厲害的同學說「邏輯設計真正的核心是，如何設計電路，而不是code怎麼寫」，因此他們總說寫成事前先畫圖，把架構跟接線畫出來，這樣寫程式就會快輕鬆且容易許多，這也是老師會要求我們在每次作業都要繳交report，並繪製block diagram的原因，只要邏輯清晰，寫code就不難。\n但一開始還在摸索硬體語言的我完全不懂，每每遇到題目都要debug好久，而且每次report用draw.io繪製一張diagram動輒就要1、2個小時，所以我經常每兩周就要大熬夜一次，對於每天12.睡覺的我真的很破壞作息。\n但是在幾次的作業下來後慢慢抓住了一些手感，也當然因為有隊友可以互相討論，讓我可以在撰寫前先跟隊友討論一下對實做的一些問題和設計架構，也從討論中可以看到不一樣的觀點，時常會有「阿~原來還可以這樣做!」那種醍醐灌頂的感覺，而且可以從作業中自己踩坑自己爬起來，更加印象深刻，對FPGA或是硬體電路設計跟verilog有更進一步的了解。\n因為作業的期限是1周，加上我的不熟悉，常常讓我一題明明寫出來了卻找不出bug，debug總是花掉我很多時間，如果還算入report跟繪圖的時間，我幾乎要交作業的那周天天都在寫verilog。我時常詢問一些厲害的同學他們是怎麼跟去debug、或是明明跟我一樣都是第一次接觸硬體語言，他們是怎麼去適應並熟悉的，也透過他們的分享，讓我知道像是可以結合以前所學，把中間運算的東西外接output，看看是哪裡出錯，才不用死死盯著code卻百思不得其解等等的知識。然後，若陷入太久，可以轉換心情，轉移注意力，隔一段時間再回來看看，或許會有新的發現。\n最後，因為這堂課幾乎所有作業都要2人小組完成，因此，我也跟我的隊友成為蠻要好的朋友，雖然我們會有意見不合的時候，會有時間喬不攏的時候，但是我們會一起鼓勵彼此，一起衝刺趕在期限內完成作業，有時候他體諒我有社團，有時候我體諒他有考試，我們總是在溝通的過程中能互相體恤對方的立場，有時候我們各自輪流雷想向對方道歉時，彼此卻又總會安慰對方，並且體諒對方，真的覺得這是一件難能可貴的事，因為合作必有磨合，而能在磨合下還能互相鼓勵扶持，真的很不簡單:)\n我們final project也做出了我們想像中的酷東西，不想要明明是硬體設計課卻單純只做純軟體的應用，我們一起構思出與硬體結合的酷project，一起為仙人掌笑到翻掉，一起逛電子材料行，一起第一次在資電館過夜，一起在完事後大爆睡，老實說真的很累，但真的很充實，而我們也都為自己的酷東西感到驕傲:)",
+    "inLanguage" : "en-us",
+    "author" : "Andrea.Hsu",
+    "creator" : "Andrea.Hsu",
+    "publisher": "Andrea.Hsu",
+    "accountablePerson" : "Andrea.Hsu",
+    "copyrightHolder" : "Andrea.Hsu",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-01-30 20:54:20 \u002b0800 CST",
+    "dateModified" : "2022-01-30 20:54:20 \u002b0800 CST",
+    "url" : "https:\/\/andreahsu.github.io\/2022\/logic_design_experiment\/",
+    "wordCount" : "55",
+    "keywords" : [ "cs", "Andrea\u0027s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://andreahsu.github.io">Andrea&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://andreahsu.github.io">Andrea&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">心得:邏輯設計實驗(大二上必) 李濬屹</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://andreahsu.github.io" rel="author">Andrea.Hsu</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2022-01-30 itemprop="datePublished">January 30, 2022</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://andreahsu.github.io/categories/feedback/"> Feedback </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h3 id="課程走向">課程走向:</h3>
+<p>會從基礎的ic design開始介紹，前半個學期都會聚焦在verilog，從基礎語法、到撰寫module、劃分hierarchy，並且教導如何將code燒入FPGA，
+在這堂課中會讓我們熟悉FPGA操作，從接線、switch、LED、7-segment display等等。後半個學期會專注在coding style，並且詳細介紹將其他電子材料(組件，像是鍵盤、音響、螢幕、馬達電動車等等)接上FPGA，如何接訊號並教導撰寫verilog透過FPGA控制。
+由於作業和final project需要和同學合力完成，因此上課規定2人一組，可自行挑選隊友，也可以讓老師分發。</p>
+<h3 id="作業">作業:</h3>
+<ul>
+<li>
+<p>型式:</p>
+<p>每兩週一次，每次作業期限是1星期，幾乎每次的作業都是小組作業。
+每次作業的basic題目是上機考須完成的內容，而advance的題目則為作業，會有4~5題，加上1題須實作入FPGA裡的，繳交期限當天要當場demo FPGA作業。
+每次作業繳交時都需要交設計的.v檔、testbench、跟report，report要詳述如何設計，並需要繪製blockdiagram說明整體。</p>
+</li>
+<li>
+<p>內容:</p>
+<p>基本上advance的題目都需要時間去理解題目，當然有平易近人的題目，但大多都是要詳細去思考整體架構該如何設計、怎麼劃分，電路該怎麼接，以及考慮一些可能未考慮到的狀況。
+此外，需撰寫testbench去測試自己的code有沒有甚麼問題，寫testbench真的對偵錯有很大的幫助，可以迅速知道自己有沒有接錯線路。
+FPGA題目從最簡單亮LED燈，到用FPGA實作1A2B遊戲跟販賣機，後期會接上馬達電動車跟VGA螢幕顯示，架構會越來越複雜，兩個人可以互相討論並分工合作真的很棒(前提請找到好隊友XD)，可以切割sub module在互相組合完成FPGA題目。</p>
+</li>
+<li>
+<p>難度與作業給分:</p>
+<p>難度 5顆星，評分的方式為助教會使用他們的testbench測試我們繳交的code，若通過測試則code部分分數應該會全拿，剩下就是report分數(占比個人認為很重)，因為即使code都通過了，但report漏寫或是寫得不好，扣分蠻重的; 反之，若code沒有通過測試，但report撰寫詳細(即讓批閱者能理解整體設計架構跟邏輯是正確的，可能出小差錯)，則分數還是很高的。</p>
+</li>
+</ul>
+<h3 id="考試">考試:</h3>
+<ul>
+<li>
+<p>二次段考(期中和期末)</p>
+</li>
+<li>
+<p>每兩周上機考一次，須當場做出並給助教demo，可以和同學討論，作業也會在上機考當周公布，當周的下周就是繳交作業期限。</p>
+</li>
+<li>
+<p>內容:</p>
+<p>都跟作業有相當大的關係，作業只要有好好寫，基本看到題目不會太慌張，但是，能不能寫對就是憑個人細心，因為寫verilog時很容易不小心接錯線，就一步錯全部錯了，而且考試是直接整題沒有分數(沒有部份分數)。
+而考試只會給input、output名字，語法之類的完全不會給，因此考試務必要 <strong>非常非常熟悉</strong> verilog。
+而寫testbench也很重要，因為這可以幫助你偵測是寫錯code，但是很容易沒有時間作完所有題目，只要不小心一題沒有掌控好時間，就會寫不完。<strong>時間掌握很重要</strong>
+另外，每次考試大概4-5題，其中會有一題是FPGA題目，當場寫出來給助教dmeo過關就有分數，通常如果有把握會寫FPGA，那就先寫，把該拿的分數先拿到手，避免後面大家都搶著demo過了考試時間。</p>
+</li>
+</ul>
+<h3 id="project">project:</h3>
+<p>這堂課只有最後需要兩人合力完成一個final project，題目任意發揮，只要做出你的<strong>酷東西</strong>(教授真的特別特別強調這個)，期末展示給教授和助教看，需要稍微簡介/報告作品，主要評分為完整性、困難性、以及創意性等等，最後當然也要繳交report，來說明整體設計及中間的嘗試、困難與解方。</p>
+<p>網路上有許多作品，像是夾娃娃機、或是一些透過FPGA控制的外接螢幕小遊戲，所以老師希望能夠看到別具一格的創意。</p>
+<p>加分項目是，能將ML融合進final project中(意即將ML模型刻入FPGA)，並且有實際在final project中發揮作用，就可以加分。</p>
+<p>我們這屆有人做出很有趣的小遊戲，像是數獨、1A2B等等有關可以手寫數字的小遊戲，也順便應用了ML。不含ML的作品也有像是，音樂與燈光的互動裝置、天竺鼠藍芽車車等等&hellip;&hellip;，許多令人印象深刻的作品。</p>
+<h3 id="心得困境方法">心得&amp;困境&amp;方法:</h3>
+<p>這是這個學期花最多心力和腦袋的一門課，還有肝XD但不得不說，真的很充實，老師跟助教都非常認真，上課講義非常詳細，下課若預約TA time助教也都會很有耐心的解答問題，老師是一個很親民的人，我們每堂上機老師都會到場，在demo馬達車車或是final project時也都會在一旁錄影，而且很喜歡跟學生討論問題，而且很鼓勵我們多嘗試新的酷咚咚。</p>
+<p>而我在這門課學到三大能力: <strong>設計電路，撰寫verilog</strong>、<strong>耐心和debug方法</strong>、<strong>溝通與體恤</strong></p>
+<p>經常聽到很厲害的同學說「邏輯設計真正的核心是，如何設計電路，而不是code怎麼寫」，因此他們總說寫成事前先畫圖，把架構跟接線畫出來，這樣寫程式就會快輕鬆且容易許多，這也是老師會要求我們在每次作業都要繳交report，並繪製block diagram的原因，只要邏輯清晰，寫code就不難。</p>
+<p>但一開始還在摸索硬體語言的我完全不懂，每每遇到題目都要debug好久，而且每次report用draw.io繪製一張diagram動輒就要1、2個小時，所以我經常每兩周就要大熬夜一次，對於每天12.睡覺的我真的很破壞作息。</p>
+<p>但是在幾次的作業下來後慢慢抓住了一些手感，也當然因為有隊友可以互相討論，讓我可以在撰寫前先跟隊友討論一下對實做的一些問題和設計架構，也從討論中可以看到不一樣的觀點，時常會有「阿~原來還可以這樣做!」那種醍醐灌頂的感覺，而且可以從作業中自己踩坑自己爬起來，更加印象深刻，對FPGA或是硬體電路設計跟verilog有更進一步的了解。</p>
+<p>因為作業的期限是1周，加上我的不熟悉，常常讓我一題明明寫出來了卻找不出bug，debug總是花掉我很多時間，如果還算入report跟繪圖的時間，我幾乎要交作業的那周天天都在寫verilog。我時常詢問一些厲害的同學他們是怎麼跟去debug、或是明明跟我一樣都是第一次接觸硬體語言，他們是怎麼去適應並熟悉的，也透過他們的分享，讓我知道像是可以結合以前所學，把中間運算的東西外接output，看看是哪裡出錯，才不用死死盯著code卻百思不得其解等等的知識。然後，若陷入太久，可以轉換心情，轉移注意力，隔一段時間再回來看看，或許會有新的發現。</p>
+<p>最後，因為這堂課幾乎所有作業都要2人小組完成，因此，我也跟我的隊友成為蠻要好的朋友，雖然我們會有意見不合的時候，會有時間喬不攏的時候，但是我們會一起鼓勵彼此，一起衝刺趕在期限內完成作業，有時候他體諒我有社團，有時候我體諒他有考試，我們總是在溝通的過程中能互相體恤對方的立場，有時候我們各自輪流雷想向對方道歉時，彼此卻又總會安慰對方，並且體諒對方，真的覺得這是一件難能可貴的事，因為合作必有磨合，而能在磨合下還能互相鼓勵扶持，真的很不簡單:)</p>
+<p>我們final project也做出了我們想像中的酷東西，不想要明明是硬體設計課卻單純只做純軟體的應用，我們一起構思出與硬體結合的酷project，一起為仙人掌笑到翻掉，一起逛電子材料行，一起第一次在資電館過夜，一起在完事後大爆睡，老實說真的很累，但真的很充實，而我們也都為自己的酷東西感到驕傲:)</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Andrea.Hsu </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://andreahsu.github.io/2022/logic_design_experiment/>https://andreahsu.github.io/2022/logic_design_experiment/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://andreahsu.github.io/tags/cs/">
+                    #cs</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://andreahsu.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://andreahsu.github.io/2021/discete_math/" class="prev" rel="prev" title="心得:離散數學(大一上必) 韓永楷"><i class="iconfont icon-left"></i>&nbsp;心得:離散數學(大一上必) 韓永楷</a>
+         
+        
+        <a href="https://andreahsu.github.io/2022/data_structure/" class="next" rel="next" title="心得: 資料結構(大二上必) 沈之涯">心得: 資料結構(大二上必) 沈之涯&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2021 - 2022</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://andreahsu.github.io">Andrea.Hsu</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
