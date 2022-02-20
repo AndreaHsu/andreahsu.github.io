@@ -6,7 +6,20 @@
     <description>Recent content in Feedback on Andrea&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Jan 2022 20:54:53 +0800</lastBuildDate><atom:link href="https://andreahsu.github.io/categories/feedback/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jan 2022 20:55:20 +0800</lastBuildDate><atom:link href="https://andreahsu.github.io/categories/feedback/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>心得:常微分方程(大二上選) 王俊堯</title>
+      <link>https://andreahsu.github.io/2022/ode/</link>
+      <pubDate>Sun, 30 Jan 2022 20:55:20 +0800</pubDate>
+      
+      <guid>https://andreahsu.github.io/2022/ode/</guid>
+      <description>課程走向: 從first-order differential equations(ODE)、second-order differential equations到Lplace transform，在提及到Series solutions for differential equations ，最後會再提及一些Fourier series。在一階一次常微分方程會分成四個階段詳細教學: 直接積分、可分離變數、可正合、線性ODE，中間會詳細介紹當遇到甚麼情形該怎麼計算，在講解每個定理也都會先證明才引用。在每個大主題的最後都會和實際應用接軌，像是電路題型等等。接著是高階線性ODE，也分成三類線: 性常係數、等維線性、變係數線性，也是針對不同情況介紹不同法則(計算方法)。而接者就會講解著名的Lplace Transform，從第一、二平移定理、褶合積分到逆轉換，會詳細的實際做一次題目應用所學定理，最後帶一些級數解和簡易的Fourier Series。
+作業:  不計分，但可做為加分  和上課所學相似，主要是讓我們熟悉授課知識，用上課觀念就能解題，每一個小節就一個作業練習，有些需要融會貫通多種觀念才能解題，但基本上不會太超出上課所學。
+考試:   不定期隨堂考(經常，一次段考大概5次，通常考上一次的授課內容，每次就考一題或兩題，不難，有讀會寫沒讀不會寫)
+  三次段考
+ 內容: 基本計算定理+作業計算題+上課定理的證明 難度與給分: 不會太難，一樣，作業跟上課內容都熟悉就會順順的做完，上課有教的證明要練習一下。可能會有一些思考題，但也不會太過刁鑽。只要有盡量寫出計算過程，沾到一點邊邊教授和助教會很放寬給分數。    心得: 剛開始上老師的課的時候其實還蠻挫的XD因為聽到老師會不定期小考，就很害怕，每次上課前都會臨時抱佛腳一下，有幾次真的被老師的突如其來給殺的措手不及，但只要每次上課回去有好好熟悉一下上節課的內容，小考真的不會太難。而且老師上課有趣，每次上課都一定會花大概15分鐘和學生聊天，分享他的一些人生經歷或是最近的事，而且相當關心學生，總是在宣導不論發生甚麼事都可以和他聊聊，真的是一個很暖心的老師。而且，老師會記得每個學生的名字，是認真在台上就可以叫出來的那種，記憶力非凡外當然也是用心不少。 這堂課比較偏向解題，老師會很系統的把各種定理整理在一起，介紹並帶我們練習題目，非常扎實，有點像高中數學授課的感覺，就是有人幫你把東西都整理成好好的，只是內容比較難一些，當然內容全部教授完就還是要靠自己融會貫通，多做題目，自己整理一套邏輯，在解題時也比較能快速判斷該用甚麼觀念解題。 總結這堂課收穫匪淺，而且重新幫我把微積分的基礎打得更穩，也很喜歡這個很暖心又親切的老師。</description>
+    </item>
+    
     <item>
       <title>心得:線性代數(大二上必) 張隆紋</title>
       <link>https://andreahsu.github.io/2022/linear_math/</link>
