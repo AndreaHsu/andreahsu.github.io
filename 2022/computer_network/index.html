@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Andrea.Hsu">
+  
+  
+  
+  <link rel="prev" href="https://andreahsu.github.io/2022/linear_math/" />
+  <link rel="next" href="https://andreahsu.github.io/2022/ode/" />
+  <link rel="canonical" href="https://andreahsu.github.io/2022/computer_network/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           心得:計算機網路概論(大二上選) 林華君 | Andrea&#39;s Blog
+       
+  </title>
+  <meta name="title" content="心得:計算機網路概論(大二上選) 林華君 | Andrea&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/andreahsu.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "心得:計算機網路概論(大二上選) 林華君",
+    "headline" : "心得:計算機網路概論(大二上選) 林華君",
+    "description" : "課程走向: 會從基本網路構造介紹，從OSI 7-layer Model到網路基本名詞(Socket、Delay、Bandwidth)，簡述如何建立網路連線，依照層級由下往上介紹。一些觀念如連線中的操作(Encoding、Framing、Error Detection等等)，尤其在Error Detection會詳細介紹CRC、Checksum，並帶出很多Protocol(Stop and Wait、Sliding Window)。接著進入Ethernet，開始介紹Data-Link layer中的Bridge、Switch，並詳細說明會實際應用的algorithm(像 Spanning Tree Algorithm 等等)，再繼續向上一層講解IP的觀念，Netwrok layer中的分配IP、切割子網域問題等等，帶出VPN跟Router的概念。最後重點將聚焦於UDP和TCP(Transport layer protocol)，尤其是TCP，從three-handshake、close connection、trigger TCP transmission跟TCP的問題都會帶到，中間會跳過presentation layer和Session layer，並帶出現今世界中使用的一些Application，介紹HTTP、URL、DNS等相關概念。\n作業: 老師勾選，有些蠻多的但有些很少，有些蠻難的，但有些是熟悉觀念的基本題型。\n考試:   三次段考\n  內容:\n個人認為後兩次考試都偏向背誦，像是需要熟記每個protocol的英文全名及定義(需要手寫)，有教到的algorithm也會考遇到一個情形該如何一步一步推出結果，有些會與他的勾選作業題相似，但它基本上不會出跟作業題一模一樣的，都會小改數字或是題目，然後答案煥然一新(所以被答案是沒用的)\n  難度與給分:\n第一次沒有這麼背誦，題目比較靈活，所以個人覺得比較難，但後兩次偏向背誦及基本定義清楚，所以比較容易一些。\n  final project: 使用TCP實做一個猜數字的小遊戲，用C\u002b\u002b\/C撰寫，沒有給模板，會給教學網址(此網址就有一些基礎模板)，並使用wireshark去擷取封包，要會察看封包的資訊(例如: 經過幾個router、server IP是甚麼之類的)\n心得: 個人覺得老師講解相當詳細清楚，但這門課或許本身就是一堂會很想睡覺的課，因為基本上都是名詞解釋跟定理介紹，但在修這堂課時用到一些algorithm(像 Sppaning Tree、Distance Vector、Link State、Short Path)，剛好在資料結構課程中也有學習到，就會突然有一種\u0026quot;阿~原來在一堂課學到的基礎是另一堂課的應用阿\u0026quot;的感覺，好像這些理論其實離我們的生活不會很遠，對知識和應用的交集覺得很酷。",
+    "inLanguage" : "en-us",
+    "author" : "Andrea.Hsu",
+    "creator" : "Andrea.Hsu",
+    "publisher": "Andrea.Hsu",
+    "accountablePerson" : "Andrea.Hsu",
+    "copyrightHolder" : "Andrea.Hsu",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-01-30 20:55:09 \u002b0800 CST",
+    "dateModified" : "2022-01-30 20:55:09 \u002b0800 CST",
+    "url" : "https:\/\/andreahsu.github.io\/2022\/computer_network\/",
+    "wordCount" : "42",
+    "keywords" : [ "cs", "Andrea\u0027s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://andreahsu.github.io">Andrea&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://andreahsu.github.io">Andrea&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">心得:計算機網路概論(大二上選) 林華君</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://andreahsu.github.io" rel="author">Andrea.Hsu</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2022-01-30 itemprop="datePublished">January 30, 2022</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://andreahsu.github.io/categories/feedback/"> Feedback </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h3 id="課程走向">課程走向:</h3>
+<p>會從基本網路構造介紹，從OSI 7-layer Model到網路基本名詞(Socket、Delay、Bandwidth)，簡述如何建立網路連線，依照層級由下往上介紹。一些觀念如連線中的操作(Encoding、Framing、Error Detection等等)，尤其在Error Detection會詳細介紹CRC、Checksum，並帶出很多Protocol(Stop and Wait、Sliding Window)。接著進入Ethernet，開始介紹Data-Link layer中的Bridge、Switch，並詳細說明會實際應用的algorithm(像 Spanning Tree Algorithm 等等)，再繼續向上一層講解IP的觀念，Netwrok layer中的分配IP、切割子網域問題等等，帶出VPN跟Router的概念。最後重點將聚焦於UDP和TCP(Transport layer protocol)，尤其是TCP，從three-handshake、close connection、trigger TCP transmission跟TCP的問題都會帶到，中間會跳過presentation layer和Session layer，並帶出現今世界中使用的一些Application，介紹HTTP、URL、DNS等相關概念。</p>
+<h3 id="作業">作業:</h3>
+<p>老師勾選，有些蠻多的但有些很少，有些蠻難的，但有些是熟悉觀念的基本題型。</p>
+<h3 id="考試">考試:</h3>
+<ul>
+<li>
+<p>三次段考</p>
+</li>
+<li>
+<p>內容:</p>
+<p>個人認為後兩次考試都偏向背誦，像是需要熟記每個protocol的英文全名及定義(需要手寫)，有教到的algorithm也會考遇到一個情形該如何一步一步推出結果，有些會與他的勾選作業題相似，但它基本上不會出跟作業題一模一樣的，都會小改數字或是題目，然後答案煥然一新(所以被答案是沒用的)</p>
+</li>
+<li>
+<p>難度與給分:</p>
+<p>第一次沒有這麼背誦，題目比較靈活，所以個人覺得比較難，但後兩次偏向背誦及基本定義清楚，所以比較容易一些。</p>
+</li>
+</ul>
+<h3 id="final-project">final project:</h3>
+<p>使用TCP實做一個猜數字的小遊戲，用C++/C撰寫，沒有給模板，會給教學網址(此網址就有一些基礎模板)，並使用wireshark去擷取封包，要會察看封包的資訊(例如: 經過幾個router、server IP是甚麼之類的)</p>
+<h3 id="心得">心得:</h3>
+<p>個人覺得老師講解相當詳細清楚，但這門課或許本身就是一堂會很想睡覺的課，因為基本上都是名詞解釋跟定理介紹，但在修這堂課時用到一些algorithm(像 Sppaning Tree、Distance Vector、Link State、Short Path)，剛好在<strong>資料結構</strong>課程中也有學習到，就會突然有一種&quot;阿~原來在一堂課學到的基礎是另一堂課的應用阿&quot;的感覺，好像這些理論其實離我們的生活不會很遠，對知識和應用的交集覺得很酷。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Andrea.Hsu </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://andreahsu.github.io/2022/computer_network/>https://andreahsu.github.io/2022/computer_network/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://andreahsu.github.io/tags/cs/">
+                    #cs</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://andreahsu.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://andreahsu.github.io/2022/linear_math/" class="prev" rel="prev" title="心得:線性代數(大二上必) 張隆紋"><i class="iconfont icon-left"></i>&nbsp;心得:線性代數(大二上必) 張隆紋</a>
+         
+        
+        <a href="https://andreahsu.github.io/2022/ode/" class="next" rel="next" title="心得:常微分方程(大二上選) 王俊堯">心得:常微分方程(大二上選) 王俊堯&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2021 - 2022</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://andreahsu.github.io">Andrea.Hsu</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
