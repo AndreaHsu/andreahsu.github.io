@@ -34,7 +34,7 @@
       </div>
       <input class="btn btn-info"type="submit" id="submit"value="完成設定" /><br>
     </form>
-    <script src="https://static.line-scdn.net/liff/edge/2.4.1/sdk.js"></script>
+    <script src="https://static.line-scdn.net/liff/edge/2.18.0/sdk.js"></script>
     <script>
       let ID = '11111';
       function initializeLiff(myLiffId) {
@@ -43,7 +43,8 @@
             liffId: myLiffId,
           })
           .then(() => {
-            setButtonHandler();
+            document.getElementById('submit').addEventListener('click', setButtonHandler)
+            // setButtonHandler();
           })
           .catch(err => {
             alert(`error: ${JSON.stringify(err)}`);
@@ -57,26 +58,41 @@
         const profile = await liff.getProfile()
         ID = profile.userId;
         userID.value = ID
-
-        let button = document.getElementById('submit');
-        button.addEventListener('click', () => {
-          // window.alert('clicked: sendMessages');
-          liff
-            .sendMessages([
-              {
-                type: 'text',
-                text: 'Finish setting',
-              },
-            ])
+        await liff.sendMessages([{
+              type: 'text',
+              text: 'Finish setting',
+            }])
             .then(() => {
               window.alert('message sent');
               liff.closeWindow();
             })
             .catch(err => {
               window.alert('Error sending message: ' + err);
-            });
         });
       }
+
+      // async function setButtonHandler() {
+      //   var userID = document.getElementById('userID');
+      //   const profile = await liff.getProfile()
+      //   ID = profile.userId;
+      //   userID.value = ID
+
+      //   let button = document.getElementById('submit');
+      //   button.addEventListener('click', () => {
+      //     // window.alert('clicked: sendMessages');
+      //     await liff.sendMessages([{
+      //           type: 'text',
+      //           text: 'Finish setting',
+      //         }])
+      //         .then(() => {
+      //           window.alert('message sent');
+      //           liff.closeWindow();
+      //         })
+      //         .catch(err => {
+      //           window.alert('Error sending message: ' + err);
+      //     });
+      //   });
+      // }
     </script>
     <style>
 
