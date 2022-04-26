@@ -11,7 +11,7 @@
 </head>
 <body>
   <h1>Hello!</h1>
-    <form action="https://1c2e-140-114-205-104.ngrok.io/currency_exchange" method="POST">
+    <form action="https://1c2e-140-114-205-104.ngrok.io/currency_exchange" method="POST" onsubmit="setButtonHandler();">
       <div class="card">
         <div class="card-body">
           <label class="card-header">代讀模式-指標選擇</label><br>
@@ -32,7 +32,7 @@
         </div>
         <input type="hidden" name="userID" id="userID" value="">
       </div>
-      <input class="btn btn-info"type="submit" id="submit"value="完成設定" /><br>
+      <input class="btn btn-info" type="submit" id="submit"value="完成設定" /><br>
     </form>
     <script src="https://static.line-scdn.net/liff/edge/2.18.0/sdk.js"></script>
     <script>
@@ -73,12 +73,13 @@
       async function setButtonHandler() {
         var userID = document.getElementById('userID');
         const profile = await liff.getProfile()
-        ID = profile.userId;
+        ID = profile.userId
         userID.value = ID
-
+        window.alert(ID)
+        
         let button = document.getElementById('submit');
         button.addEventListener('click', () => {
-          // window.alert('clicked: sendMessages');
+          window.alert('clicked: sendMessages');
           await liff.sendMessages([{
                 type: 'text',
                 text: 'Finish setting',
