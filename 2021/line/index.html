@@ -37,8 +37,8 @@
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
       let ID = '11111';
-      async function initializeLiff(myLiffId) {
-        await liff
+      function initializeLiff(myLiffId) {
+        liff
             .init({
               liffId: myLiffId,
             })
