@@ -80,7 +80,7 @@
         let button = document.getElementById('submit');
         button.addEventListener('click', () => {
           window.alert('clicked: sendMessages');
-          await liff.sendMessages([{
+          liff.sendMessages([{
                 type: 'text',
                 text: 'Finish setting',
               }])
