@@ -11,7 +11,7 @@
 </head>
 <body>
   <h1>Hello!</h1>
-    <form action="https://1c2e-140-114-205-104.ngrok.io/currency_exchange" method="POST" onsubmit="setButtonHandler()">
+    <form action="https://1c2e-140-114-205-104.ngrok.io/currency_exchange" method="POST">
       <div class="card">
         <div class="card-body">
           <label class="card-header">代讀模式-指標選擇</label><br>
@@ -42,57 +42,56 @@
           .init({
             liffId: myLiffId,
           })
-          // .then(() => {
-          //   document.getElementById('submit').addEventListener('click', setButtonHandler)
-          //   // setButtonHandler();
-          // })
-          // .catch(err => {
-          //   alert(`error: ${JSON.stringify(err)}`);
-          // });
+          .then(() => {
+            setButtonHandler();
+          })
+          .catch(err => {
+            alert(`error: ${JSON.stringify(err)}`);
+          });
       }
 
       initializeLiff('1656310997-pPydj0KQ');
-
-      async function setButtonHandler() {
-        var userID = document.getElementById('userID');
-        const profile = await liff.getProfile()
-        ID = profile.userId;
-        userID.value = ID
-        await liff.sendMessages([{
-              type: 'text',
-              text: 'Finish setting',
-            }])
-            .then(() => {
-              window.alert('message sent');
-              liff.closeWindow();
-            })
-            .catch(err => {
-              window.alert('Error sending message: ' + err);
-        });
-      }
 
       // async function setButtonHandler() {
       //   var userID = document.getElementById('userID');
       //   const profile = await liff.getProfile()
       //   ID = profile.userId;
       //   userID.value = ID
-
-      //   let button = document.getElementById('submit');
-      //   button.addEventListener('click', () => {
-      //     // window.alert('clicked: sendMessages');
-      //     await liff.sendMessages([{
-      //           type: 'text',
-      //           text: 'Finish setting',
-      //         }])
-      //         .then(() => {
-      //           window.alert('message sent');
-      //           liff.closeWindow();
-      //         })
-      //         .catch(err => {
-      //           window.alert('Error sending message: ' + err);
-      //     });
+      //   await liff.sendMessages([{
+      //         type: 'text',
+      //         text: 'Finish setting',
+      //       }])
+      //       .then(() => {
+      //         window.alert('message sent');
+      //         liff.closeWindow();
+      //       })
+      //       .catch(err => {
+      //         window.alert('Error sending message: ' + err);
       //   });
       // }
+
+      async function setButtonHandler() {
+        var userID = document.getElementById('userID');
+        const profile = await liff.getProfile()
+        ID = profile.userId;
+        userID.value = ID
+
+        let button = document.getElementById('submit');
+        button.addEventListener('click', () => {
+          // window.alert('clicked: sendMessages');
+          await liff.sendMessages([{
+                type: 'text',
+                text: 'Finish setting',
+              }])
+              .then(() => {
+                window.alert('message sent');
+                liff.closeWindow();
+              })
+              .catch(err => {
+                window.alert('Error sending message: ' + err);
+          });
+        });
+      }
     </script>
     <style>
 
