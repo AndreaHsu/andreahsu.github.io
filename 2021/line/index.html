@@ -34,20 +34,20 @@
       </div>
       <input class="btn btn-info" type="submit" id="submit"value="完成設定" /><br>
     </form>
-    <script src="https://static.line-scdn.net/liff/edge/2.18.0/sdk.js"></script>
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
       let ID = '11111';
-      function initializeLiff(myLiffId) {
-        liff
-          .init({
-            liffId: myLiffId,
-          })
-          .then(() => {
-            setButtonHandler();
-          })
-          .catch(err => {
-            alert(`error: ${JSON.stringify(err)}`);
-          });
+      async function initializeLiff(myLiffId) {
+        await liff
+            .init({
+              liffId: myLiffId,
+            })
+            .then(() => {
+              setButtonHandler();
+            })
+            .catch(err => {
+              alert(`error: ${JSON.stringify(err)}`);
+            });
       }
 
       initializeLiff('1656310997-pPydj0KQ');
