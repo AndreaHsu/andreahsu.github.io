@@ -11,24 +11,30 @@
 </head>
 <body>
   <h1>Hello!</h1>
-    <form action="">
-        <div class="card">
+    <form action="https://bb12-140-114-205-104.ngrok.io/currency_exchange" method="POST">
+      <div class="card">
         <div class="card-body">
-          <label class="card-header">個人喜好選擇(至多請先選擇兩個)</label><br>
-          <input type="checkbox" value="政治" id="hobby" name="like-1">政治<br>
-          <input type="checkbox" value="美妝" id="hobby" name="like-2">美妝<br>
-          <input type="checkbox" value="八卦娛樂" id="hobby" name="like-3">八卦娛樂<br>
-          <input type="checkbox" value="國際" id="hobby" name="like-4">國際<br>
-          <input type="checkbox" value="體育" id="hobby" name="like-5">體育<br>
-          <input type="checkbox" value="科技" id="hobby" name="like-6">科技<br>
+          <label class="card-header">代讀模式-指標選擇</label><br>
+          <input type="checkbox" value="hobby" name="point-1">個人喜好<br>
+          <input type="checkbox" value="hot" name="point-2">網路聲量<br>
+          <input type="checkbox" value="summary" name="point-3">摘要小標<br>
+          <input type="checkbox" value="believe" name="point-4">可信賴指標<br>
+          <input type="checkbox" value="recommend" name="point-5">推薦相關文章<br>
+        </div>
+        <div class="card-body">
+          <label class="card-header">個人喜好選擇</label><br>
+          <input type="checkbox" value="政治" name="like-1">政治
+          <input type="checkbox" value="美妝" name="like-2">美妝<br>
+          <input type="checkbox" value="八卦娛樂" name="like-3">八卦娛樂
+          <input type="checkbox" value="國際" name="like-4">國際<br>
           其他(若輸入多個請以逗點隔開)<br>
-          <input type="text" placeholder="感情，工作..." name="like-7"><br>
+          <input type="text" placeholder="體育，電子產業" name="like-5"><br>
         </div>
         <input type="hidden" name="userID" id="userID" value="">
       </div>
       <input class="btn btn-info" type="submit" id="submit"value="完成設定" /><br>
     </form>
-    <script src="https://static.line-scdn.net/liff/edge/2.18.0/sdk.js"></script>
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
       let ID = '11111';
       function initializeLiff(myLiffId) {
@@ -37,7 +43,7 @@
               liffId: myLiffId,
             })
             .then(() => {
-                initializeApp();
+              setButtonHandler();
             })
             .catch(err => {
               alert(`error: ${JSON.stringify(err)}`);
@@ -46,57 +52,48 @@
 
       initializeLiff('1656310997-pPydj0KQ');
 
-        function postData(url, data) {
-            return fetch(url, {
-                body: JSON.stringify(data),
-                cache: 'no-cache',
-                headers: {
-                    'user-agent': 'Mozilla/4.0 MDN Example',
-                    'content-type': 'application/json'
-                },
-                method: 'POST',
-                mode: 'cors',
-            })
-                .then(response => response.json()) // 輸出成 json
-        }
-        async function getUserid(){
-            var userID = document.getElementById('userID');
-            const profile = await liff.getProfile()
-            ID = profile.userId
-            userID.value = ID
-        }
+      // async function setButtonHandler() {
+      //   var userID = document.getElementById('userID');
+      //   const profile = await liff.getProfile()
+      //   ID = profile.userId;
+      //   userID.value = ID
+      //   await liff.sendMessages([{
+      //         type: 'text',
+      //         text: 'Finish setting',
+      //       }])
+      //       .then(() => {
+      //         window.alert('message sent');
+      //         liff.closeWindow();
+      //       })
+      //       .catch(err => {
+      //         window.alert('Error sending message: ' + err);
+      //   });
+      // }
 
-        document.getElementById('submit').addEventListener('click', function () {
-            if (!liff.isInClient()) {
-                sendAlertIfNotInClient();
-            } else {
-                const hobby = document.querySelectorAll("#hobby");
-                console.log(hobby)
-                like = []
-                hobby.forEach(item => {
-                    if(item.checked == true){
-                        // console.log(item)
-                        like.push(item.value)
-                    }
-                })
-                console.log(like)
+      async function setButtonHandler() {
+        var userID = document.getElementById('userID');
+        const profile = await liff.getProfile()
+        ID = profile.userId
+        userID.value = ID
+        window.alert(ID)
 
-                postData('https://1c2e-140-114-205-104.ngrok.io/currency_exchange', { hobby: like })
-                    .then(data => {
-                        liff.sendMessages([{
-                            'type': 'text',
-                            'text': "finish setting"
-                        }]).then(function () {
-                            window.alert('Message sent');
-                        }).catch(function (error) {
-                            window.alert('Error sending message: ' + error);
-                        });
-                        liff.closeWindow();
-                    }) // JSON from `response.json()` call
-                    .catch(error => alert(error))
-            }
+        let button = document.getElementById('submit');
+        button.addEventListener('click', () => {
+          window.alert('clicked: sendMessages');
+          liff.sendMessages([{
+                type: 'text',
+                text: 'Finish setting',
+              }])
+              .then(() => {
+                window.alert('message sent');
+                liff.closeWindow();
+              })
+              .catch(err => {
+                window.alert('Success!Please cloce the window!');
+                // window.alert('Error sending message: ' + err);
+          });
         });
-      
+      }
     </script>
     <style>
 
