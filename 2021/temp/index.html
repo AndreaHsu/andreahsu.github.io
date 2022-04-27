@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Currency Exchange</title>
+</head>
+<body>
+  <h1>Hello!</h1>
+    <form action="https://1c2e-140-114-205-104.ngrok.io/currency_exchange" method="POST">
+      <div class="card">
+        <div class="card-body">
+          <label class="card-header">代讀模式-指標選擇</label><br>
+          <input type="checkbox" value="hobby" name="point-1">個人喜好<br>
+          <input type="checkbox" value="hot" name="point-2">網路聲量<br>
+          <input type="checkbox" value="summary" name="point-3">摘要小標<br>
+          <input type="checkbox" value="believe" name="point-4">可信賴指標<br>
+          <input type="checkbox" value="recommend" name="point-5">推薦相關文章<br>
+        </div>
+        <div class="card-body">
+          <label class="card-header">個人喜好選擇</label><br>
+          <input type="checkbox" value="政治" name="like-1">政治
+          <input type="checkbox" value="美妝" name="like-2">美妝<br>
+          <input type="checkbox" value="八卦娛樂" name="like-3">八卦娛樂
+          <input type="checkbox" value="國際" name="like-4">國際<br>
+          其他(若輸入多個請以逗點隔開)<br>
+          <input type="text" placeholder="體育，電子產業" name="like-5"><br>
+        </div>
+        <input type="hidden" name="userID" id="userID" value="">
+      </div>
+      <input class="btn btn-info" type="submit" id="submit"value="完成設定" /><br>
+    </form>
+    <script src="https://static.line-scdn.net/liff/edge/2.18.0/sdk.js"></script>
+    <script>
+      let ID = '11111';
+      function initializeLiff(myLiffId) {
+        liff
+            .init({
+              liffId: myLiffId,
+            })
+            .then(() => {
+              setButtonHandler();
+            })
+            .catch(err => {
+              alert(`error: ${JSON.stringify(err)}`);
+            });
+      }
+
+      initializeLiff('1656310997-pPydj0KQ');
+
+      // async function setButtonHandler() {
+      //   var userID = document.getElementById('userID');
+      //   const profile = await liff.getProfile()
+      //   ID = profile.userId;
+      //   userID.value = ID
+      //   await liff.sendMessages([{
+      //         type: 'text',
+      //         text: 'Finish setting',
+      //       }])
+      //       .then(() => {
+      //         window.alert('message sent');
+      //         liff.closeWindow();
+      //       })
+      //       .catch(err => {
+      //         window.alert('Error sending message: ' + err);
+      //   });
+      // }
+
+      async function setButtonHandler() {
+        var userID = document.getElementById('userID');
+        const profile = await liff.getProfile()
+        ID = profile.userId
+        userID.value = ID
+        window.alert(ID)
+
+        let button = document.getElementById('submit');
+        button.addEventListener('click', () => {
+          window.alert('clicked: sendMessages');
+          liff.sendMessages([{
+                type: 'text',
+                text: 'Finish setting',
+              }])
+              .then(() => {
+                window.alert('message sent');
+                liff.closeWindow();
+              })
+              .catch(err => {
+                window.alert('Error sending message: ' + err);
+          });
+        });
+      }
+    </script>
+    <style>
+
+    </style>
+  </body>
+
+</html>
