@@ -7,10 +7,10 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Currency Exchange</title>
+    <title>Interests Exchange</title>
 </head>
 <body>
-  <h1>Hello!</h1>
+  <h1>Please enter your interests!</h1>
     <form action="https://bb12-140-114-205-104.ngrok.io/currency_exchange" method="POST">
       <div class="card">
         <!-- <div class="card-body">
@@ -75,11 +75,11 @@
         const profile = await liff.getProfile()
         ID = profile.userId
         userID.value = ID
-        window.alert(ID)
+        // window.alert(ID)
 
         let button = document.getElementById('submit');
         button.addEventListener('click', () => {
-          window.alert('clicked: sendMessages');
+          // window.alert('clicked: sendMessages');
           liff.sendMessages([{
                 type: 'text',
                 text: 'Finish setting',
