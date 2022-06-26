@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<rdf:RDF xml:base="http://nfu.edu.csie.ccsd/" 
+         xmlns="http://nfu.edu.csie.ccsd/#" 
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+	<Teacher rdf:ID="1">
+	    <name>Amy Chen</name>
+	    <teach rdf:resource="#202"/>
+        <design>
+            <Exam rdf:about="#Midterm"/>
+        </design>
+    </Teacher>
+
+    <Teacher rdf:ID="2">
+	    <name>Ian Wang</name>
+	    <teach rdf:resource="#201"/>
+        <design>
+            <Exam rdf:about="#Final"/>
+        </design>
+    </Teacher>
+
+    <Teacher rdf:ID="3">
+	    <name>Kimmy Liang</name>
+	    <teach rdf:resource="#101"/>
+        <design>
+            <Exam rdf:about="#Midterm"/>
+        </design>
+    </Teacher>
+
+    <Student rdf:ID="10">
+	    <name>Sherry Li</name>
+	    <study rdf:resource="#201"/>
+        <study rdf:resource="#202"/>
+    </Student>
+
+    <Student rdf:ID="20">
+	    <name>Jim Hsu</name>
+	    <study rdf:resource="#101"/>
+        <study rdf:resource="#201"/>
+    </Student>
+
+    <Student rdf:ID="30">
+	    <name>Kevin Wu</name>
+	    <study rdf:resource="#101"/>
+    </Student>
+
+    <AI rdf:ID="202">
+       <courseName>Deep Learning</courseName>
+       <courseLink>http://nfu.edu.csie.ccsd/202</courseLink>
+       <isRelatedTo>
+          <AI rdf:about="#201"/>
+       </isRelatedTo>
+    </AI>
+    <AI rdf:ID="201">
+       <courseName>Machine Learning</courseName>
+       <courseLink>http://nfu.edu.csie.ccsd/201</courseLink>
+       <isRelatedTo>
+          <Algorithm rdf:about="#101"/>
+       </isRelatedTo>
+    </AI>
+    <Algorithm rdf:ID="101">
+       <courseName>Linear Algebra</courseName>
+       <courseLink>http://nfu.edu.csie.ccsd/101</courseLink>
+    </Algorithm>
+
+</rdf:RDF>
