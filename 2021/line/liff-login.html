@@ -30,7 +30,6 @@
     <label> 體重 (kg)： <input type="number" id="weight" min="20" max="200" required> </label>
     <label> 年齡： <input type="number" id="age" min="1" max="120" required> </label>
     <label> <input type="checkbox" id="isParent"> 是否為家長 </label>
-    <input type="hidden" name="userID" id="userID" value="">
     <button type="submit" id="submitBtn">送出</button>
   </form>
 
@@ -38,6 +37,7 @@
 
   <script>
     let liffDisplayName = null;
+    let liffUserId = null;
     const GAS_URL = "https://script.google.com/macros/s/AKfycby22rdYy_V4AVXdy8sogHyFl19vqhsGKMDFX87qZzy1S3vqaS-854bE8V2OeEEJ-jROpQ/exec"; // <== 換成你部署好的 Apps Script Web App URL
 
     async function initLiff() {
@@ -47,13 +47,16 @@
           liff.login();
           return;
         }
+        showMessage("LIFF 初始化成功1", "success");
         const profile = await liff.getProfile();
-        document.getElementById("userID").value = profile.userId;
+        showMessage("LIFF 初始化成功2", "success");
+        liffUserId = profile.userId;
         liffDisplayName = profile.displayName;
         console.log("LIFF 初始化成功");
+        showMessage("LIFF 初始化成功3", "success");
       } catch (error) {
         console.error("LIFF 初始化失敗:", error);
-        showMessage("LIFF 初始化失敗", "error");
+        // showMessage("LIFF 初始化失敗:" + error, "error");
       }
     }
 
@@ -77,7 +80,7 @@
         weight: document.getElementById("weight").value,
         age: document.getElementById("age").value,
         isParent: document.getElementById("isParent").checked,
-        liffUserId: document.getElementById("userID").value,
+        liffUserId: liffUserId,
         liffDisplayName: liffDisplayName,
         timestamp: new Date().toISOString()
       };
@@ -85,7 +88,7 @@
       try {
         const response = await fetch(GAS_URL, {
           method: "POST",
-          mode: "cors",
+          // mode: "cors",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData)
         });
@@ -101,7 +104,7 @@
         }
       } catch (err) {
         console.error("送出失敗:", err);
-        showMessage("❌ 發生錯誤，請再試一次", "error");
+        showMessage("❌ 發生錯誤，請再試一次" + err, "error");
       } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = "送出";
